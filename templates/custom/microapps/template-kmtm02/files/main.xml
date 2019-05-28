@@ -1,0 +1,83 @@
+<GridLayout rows="*" loaded="{{ loaded }}" unloaded="{{ unloaded }}" xmlns:components="components">
+    <GridLayout rows="*, auto" visibility="{{ formVisibility }}">
+        <ScrollView row="0">
+            <StackLayout row="0" margin="20">
+                <Label text="Form Title" class="eloha-font-bold form-heading"></Label>
+                <StackLayout class="m-t-15">
+                    <Label text="Input Field" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-8">
+                        <components:TextField text="{{ title }}" hint="Field Title"></components:TextField>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-15">
+                    <Label text="Input Type" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-8">
+                        <components:ListPicker title="Choose Type" items="{{ inputTypes }}"
+                            selectedItem="{{ selectedType }}"></components:ListPicker>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-15">
+                    <Label text="Input Date" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-8">
+                        <components:DatePicker title="Choose Date" selectedDate="{{ selectedDate }}">
+                        </components:DatePicker>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-15">
+                    <Label text="Input Time" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-8">
+                        <components:TimePicker title="Choose Time" selectedTime="{{ selectedTime }}">
+                        </components:TimePicker>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-15" orientation="horizontal">
+                    <Label text="Input Switch" class="eloha-font-semibold form-field-label"
+                        verticalAlignment="center"></Label>
+                    <StackLayout class="m-t-8 m-l-10" horizontalAlignment="left" verticalAlignment="center">
+                        <components:Switch selectedState="{{ state }}"></components:Switch>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-15">
+                    <Label text="Input Slider" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout rows="*" class="m-t-8">
+                        <components:Slider value="{{ ratings }}" minValue="0" maxValue="5"></components:Slider>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-15">
+                    <Label text="Input Comments" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-8">
+                        <components:TextView text="{{ comments }}" hint="Comments">
+                        </components:TextView>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        <GridLayout row="1" rows="*" verticalAlignment="bottom" class="form-submit-section">
+            <Button class="eloha-font-semibold form-button-submit" tap="{{ onSubmitTapped }}" text="Submit"></Button>
+        </GridLayout>
+    </GridLayout>
+    <StackLayout row="0" visibility="{{ statusVisibility }}">
+        <GridLayout class="m-t-20" rows="auto, auto" columns="*">
+            <GridLayout style="margin-top: 50" row="0" rows="*, auto" horizontalAlignment="center">
+                <StackLayout row="0">
+                    <Label text="&#xf15b;" class="fa form-status-icon" horizontalAlignment="center"></Label>
+                </StackLayout>
+                <StackLayout row="0">
+                    <Label text="&#xf058;" class="fa form-status-ok-icon" style="margin-top: 30"
+                        horizontalAlignment="center"></Label>
+                </StackLayout>
+                <GridLayout class="m-t-20" row="1" rows="*" horizontalAlignment="center">
+                    <Label text="Form Data Captured Successfully" class="form-status-message"></Label>
+                </GridLayout>
+            </GridLayout>
+            <GridLayout style="margin-top: 80" row="1" rows="*, auto" horizontalAlignment="center">
+                <StackLayout row="0" tap="{{ onCreateNewTapped }}">
+                    <Label class="eloha-font-semibold form-status-new-item" text="+ CREATE NEW ITEM"></Label>
+                </StackLayout>
+                <StackLayout class="m-t-8" row="1" horizontalAlignment="center" tap="{{ onCloseTapped }}">
+                    <Label class="eloha-font-semibold" text="EXIT" class="form-status-exit"></Label>
+                </StackLayout>
+            </GridLayout>
+        </GridLayout>
+    </StackLayout>
+</GridLayout>

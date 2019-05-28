@@ -1,0 +1,33 @@
+<GridLayout rows="*" loaded="{{ loaded }}" unloaded="{{ unloaded }}" xmlns:signpad="nativescript-drawingpad">
+    <GridLayout rows="*, auto">
+        <GridLayout row="0" rows="*">
+            <GridLayout visibility="{{ drawVisibility }}">
+                <signpad:DrawingPad row="0" backgroundColor="#E0E0E0" id="signature-pad" margin="10"
+                    penColor="{{ penColor }}" penWidth="{{ penWidth }}" />
+            </GridLayout>
+            <GridLayout visibility="{{ resultVisibility }}">
+                <ContentView id="signature-container">
+                    <StackLayout>
+                        <Image class="m-t-30 m-b-15" src="res://logo_drawer" width="25%"></Image>
+                        <Label text="None Captured" textWrap="true"
+                            class="eloha-font-semibold preview-mesg-label p-10 m-x-auto"></Label>
+                    </StackLayout>
+                </ContentView>
+            </GridLayout>
+        </GridLayout>
+        <GridLayout row="1" columns="*, *" class="preview-actions">
+            <StackLayout col="0" class="p-10" tap="{{ onRefreshTapped }}">
+                <Label text="&#xf021;" class="fa preview-action-icon" horizontalAlignment="center"
+                    verticalAlignment="center"></Label>
+                <Label class="eloha-font-regular preview-action-label m-t-5" text="Refresh" horizontalAlignment="center"
+                    verticalAlignment="center"></Label>
+            </StackLayout>
+            <StackLayout col="2" class="p-10" tap="{{ onCaptureTapped }}">
+                <Label text="&#xf00c;" class="fa preview-action-icon" horizontalAlignment="center"
+                    verticalAlignment="center"></Label>
+                <Label class="eloha-font-regular preview-action-label m-t-5" text="Capture" horizontalAlignment="center"
+                    verticalAlignment="center"></Label>
+            </StackLayout>
+        </GridLayout>
+    </GridLayout>
+</GridLayout>

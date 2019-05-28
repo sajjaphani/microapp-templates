@@ -1,0 +1,3 @@
+<GridLayout rows="auto, auto" class="card" loaded="{{ loaded }}" unloaded="{{ unloaded }}" xmlns:cards="cards">
+    <Label text="No Microapp UI"></Label>
+</GridLayout>

@@ -1,0 +1,16 @@
+{
+    "name": "Corporate Events",
+    "description": "Corporate events template.",
+    "requireCollection": true,
+    "icon": "",
+    "hasTestData": true,
+    "summary": "Sending updates to the employees in a timely manner is an important aspect. This card template can be used to send the organization wide events to a broad range of employees. This template also contains sample data, and can be customzed based on the data that needs to shown as an event.",
+    "files": [
+        "templates/custom/cards/template-kmtc02/files/index.js",
+        "templates/custom/cards/template-kmtc02/files/main-model.js",
+        "templates/custom/cards/template-kmtc02/files/main.css",
+        "templates/custom/cards/template-kmtc02/files/main.js",
+        "templates/custom/cards/template-kmtc02/files/main.xml",
+        "templates/custom/cards/template-kmtc02/files/sample-data.json"
+    ]
+}

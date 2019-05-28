@@ -1,0 +1,87 @@
+<!-- Expenses Microapp -->
+<GridLayout rows="*" loaded="{{ loaded }}" xmlns:components="components">
+    <GridLayout rows="*, auto" visibility="{{ formVisibility }}">
+        <ScrollView row="0">
+            <StackLayout row="0" margin="20">
+                <Label text="Create Expense Report" class="eloha-font-bold form-heading"></Label>
+                <StackLayout class="m-t-15">
+                    <Label text="Expense Title" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-8">
+                        <components:TextField text="{{ title }}" hint="Expense Title"></components:TextField>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-15">
+                    <Label text="Expense Type" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-8">
+                        <components:ListPicker title="Expense Type" items="{{ expenseTypes }}"
+                            selectedItem="{{ selectedExpenseType }}"></components:ListPicker>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-15">
+                    <Label text="Expense Date" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-8">
+                        <components:DatePicker title="Expense Date" selectedDate="{{ selectedDate }}"
+                            maxDate="{{ date }}"></components:DatePicker>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-15">
+                    <Label text="Spent City/Town" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-8">
+                        <components:TextField text="{{ place }}" hint="Spent City/Town"></components:TextField>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-15">
+                    <Label text="Amount" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-8">
+                        <components:TextField text="{{ amount }}" hint="Amount"></components:TextField>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-15">
+                    <Label text="Attachments" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="form-field-attachment m-t-8">
+                        <GridLayout columns="auto, *, auto" tap="{{ onUploadTapped }}">
+                            <Image row="0" src="{{ cameraImage }}" id="image" stretch="aspectFit" class="m-5"></Image>
+                            <Label col="1" text="{{ imageName }}" class="eloha-font-regular form-field-text"
+                                verticalAlignment="center"></Label>
+                            <Label col="2" class="fa form-field-icon m-r-10" text="&#xf030;"
+                                verticalAlignment="center"></Label>
+                        </GridLayout>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-15">
+                    <Label text="Comments" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-8">
+                        <components:TextView text="{{ comments }}" hint="Comments"></components:TextView>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        <GridLayout row="1" rows="*" verticalAlignment="bottom" class="form-submit-section">
+            <Button class="eloha-font-semibold form-button-submit" tap="{{ onSubmitTapped }}" text="Submit"></Button>
+        </GridLayout>
+    </GridLayout>
+    <StackLayout visibility="{{ statusVisibility }}" class="info-card-footer">
+        <GridLayout class="m-t-20" rows="auto, auto" columns="*">
+            <GridLayout style="margin-top: 50" row="0" rows="*, auto" horizontalAlignment="center">
+                <StackLayout row="0">
+                    <Label text="&#xf15b;" class="fa form-status-icon" horizontalAlignment="center"></Label>
+                </StackLayout>
+                <StackLayout row="0">
+                    <Label text="&#xf058;" class="fa form-status-ok-icon" style="margin-top: 30"
+                        horizontalAlignment="center"></Label>
+                </StackLayout>
+                <GridLayout class="m-t-20" row="1" rows="*" horizontalAlignment="center">
+                    <Label text="Expense Submitted Successfully" class="form-status-message"></Label>
+                </GridLayout>
+            </GridLayout>
+            <GridLayout style="margin-top: 80" row="1" rows="*, auto" horizontalAlignment="center">
+                <StackLayout row="0" tap="{{ onCreateNewTapped }}">
+                    <Label class="eloha-font-semibold form-status-new-item" text="+ CREATE NEW EXPENSE"></Label>
+                </StackLayout>
+                <StackLayout class="m-t-10" row="1" horizontalAlignment="center" tap="{{ onCloseTapped }}">
+                    <Label class="eloha-font-semibold" text="EXIT" class="form-status-exit"></Label>
+                </StackLayout>
+            </GridLayout>
+        </GridLayout>
+    </StackLayout>
+</GridLayout>

@@ -1,0 +1,49 @@
+<GridLayout class="preview-background" rows="*" loaded="{{ loaded }}" unloaded="{{ unloaded }}"
+    xmlns:BarcodeScanner="nativescript-plugin-firebase/mlkit/barcodescanning">
+    <GridLayout row="0" visibility="{{ scannerVisibility }}" rows="auto, auto">
+        <GridLayout row="0" width="260" height="300" style="margin-top: 10%">
+            <BarcodeScanner:MLKitBarcodeScanner width="250" height="250" formats="{{ formats }}" pause="{{ pause }}"
+                torchOn="false" android:processEveryNthFrame="5" ios:processEveryNthFrame="10"
+                scanResult="{{ onBarcodeScanResult }}">
+            </BarcodeScanner:MLKitBarcodeScanner>
+        </GridLayout>
+        <GridLayout row="1" class="m-t-20">
+            <Label class="eloha-font-regular preview-scan-label" width="50%" text="Focus the Bar Code in the above area"
+                horizontalAlignment="center" verticalAlignment="top" textWrap="true"></Label>
+        </GridLayout>
+    </GridLayout>
+    <GridLayout row="0" visibility="{{ scanResultVisibility }}">
+        <GridLayout rows="*, auto">
+            <GridLayout row="0" rows="*">
+                <StackLayout row="0" class="preview-app-background" width="100%" height="100%">
+                    <ContentView id="barcode-result" class="m-l-5 m-r-5">
+                        <StackLayout style="margin-top: 50;">
+                            <Label text="QR Details"
+                                class="eloha-font-semibold barcode-result-detail-label p-10 m-x-auto"></Label>
+                            <Label text="Value:" class="eloha-font-semibold barcode-result-label p-5"></Label>
+                            <Label text="{{ selectedBarcodeResult.value }}" textWrap="true"
+                                class="eloha-font-semibold barcode-result-data p-5"></Label>
+                            <Label text="Format:" class="eloha-font-semibold barcode-result-label p-5"></Label>
+                            <Label text="{{ selectedBarcodeResult.format }}"
+                                class="eloha-font-semibold barcode-result-data p-5"></Label>
+                        </StackLayout>
+                    </ContentView>
+                </StackLayout>
+            </GridLayout>
+            <GridLayout row="1" columns="*, *" class="preview-actions">
+                <StackLayout col="0" class="p-10" tap="{{ onScanTapped }}">
+                    <Label text="&#xf029;" class="fa preview-action-icon" horizontalAlignment="center"
+                        verticalAlignment="center"></Label>
+                    <Label class="eloha-font-regular preview-action-label m-t-5" text="Scan"
+                        horizontalAlignment="center" verticalAlignment="center"></Label>
+                </StackLayout>
+                <StackLayout col="1" class="p-10" tap="{{ onCopyTapped }}">
+                    <Label text="&#xf0ea;" class="fa preview-action-icon" horizontalAlignment="center"
+                        verticalAlignment="center"></Label>
+                    <Label class="eloha-font-regular preview-action-label m-t-5" text="Copy"
+                        horizontalAlignment="center" verticalAlignment="center"></Label>
+                </StackLayout>
+            </GridLayout>
+        </GridLayout>
+    </GridLayout>
+</GridLayout>

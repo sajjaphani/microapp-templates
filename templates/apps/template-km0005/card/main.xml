@@ -1,0 +1,62 @@
+<GridLayout rows="auto, auto" class="card" loaded="{{ loaded }}" unloaded="{{ unloaded }}"  xmlns:cards="cards">
+    <!-- Card Header-->
+    <cards:CardHeader name="{{ name }}"></cards:CardHeader>
+    <!-- Visible where there is an event/data... -->
+    <GridLayout row="1" visibility="{{ notificationsVisibility }}" class="card-feed-content">
+        <!-- Event Content -->
+        <Repeater items="{{ items }}">
+            <Repeater.itemTemplate orientation="horizontal">
+                <StackLayout class="card-feed-item-top" id="{{ id }}">
+                    <!-- Event Header -->
+                    <cards:EventHeader fromName="{{ from.name }}" fromAvatar="{{ from.avatar }}"
+                        submittedOn="{{ submittedOn }}" eventName="{{ name }}" eventIcon="&#xf0f2;"
+                        eventPriority="{{ priority }}" eventInfo="{{ priority }}"></cards:EventHeader>
+                    <!-- Event Content with Actions -->
+                    <GridLayout rows="*, *" class="p-b-15">
+                        <GridLayout row="0" verticalAlignment="top">
+                            <StackLayout row="1" class="m-l-10 m-r-10">
+                                <Label class="eloha-font-regular event-summary m-t-10" text="{{ summary }}"
+                                    textWrap="true"></Label>
+                                <Image visibility="{{ image ? 'visible' : 'collapse' }}" stretch="aspectFill" class="m-t-5" src="{{ image }}" height="250"></Image>
+                                <StackLayout class="m-t-10" visibility="collapse" id="{{  'more-details-' + id}}">
+                                    <!-- <Image stretch="aspectFit" class="m-t-5" src="{{ image }}" width="100"></Image> -->
+                                    <Repeater items="{{ data }}">
+                                        <Repeater.itemTemplate orientation="horizontal">
+                                            <Label class="m-t-5" style="font-size: 14; color: #133F64;">
+                                                <FormattedString ios:fontFamily="system">
+                                                    <Span text="{{ key }}" class="eloha-font-regular"></Span>
+                                                    <Span text=": " class="eloha-font-regular"></Span>
+                                                    <Span text="{{ value }}" class="eloha-font-semibold"></Span>
+                                                </FormattedString>
+                                            </Label>
+                                        </Repeater.itemTemplate>
+                                    </Repeater>
+                                </StackLayout>
+                            </StackLayout>
+                        </GridLayout>
+                        <!-- Event Actions -->
+                        <GridLayout row="1" columns="auto, *" class="p-t-10">
+                            <StackLayout col="0" orientation="horizontal">
+                                <cards:EventAction class="eloha-action-more" faIcon="&#xf141;"
+                                    viewId="{{  'more-details-' + id }}" verticalAlignment="bottom"
+                                    tap="{{ $parents['Repeater'].onMoreTapped }}"></cards:EventAction>
+                            </StackLayout>
+                            <StackLayout col="1" orientation="horizontal" horizontalAlignment="right">
+                                <cards:EventAction class="eloha-action eloha-action-secondary m-r-10" faIcon="&#xf00d;"
+                                    itemId="{{ id }}" tap="{{ $parents['Repeater'].onCancelTapped }}"></cards:EventAction>
+                                <cards:EventAction class="eloha-action eloha-action-primary m-r-10"
+                                    verticalAlignment="center" itemId="{{ id }}" faIcon="&#xf00c;" tap="{{ $parents['Repeater'].onAcceptTapped }}">
+                                </cards:EventAction>
+                            </StackLayout>
+                        </GridLayout>
+                    </GridLayout>
+                </StackLayout>
+            </Repeater.itemTemplate>
+        </Repeater>
+    </GridLayout>
+    <!-- Else part -->
+    <!-- Visible where there is no event/data or an action is takle place... -->
+    <StackLayout row="1" visibility="{{ noNotificationsVisibility }}" class="card-feed-item-top">
+        <cards:NoCardEvent></cards:NoCardEvent>
+    </StackLayout>
+</GridLayout>

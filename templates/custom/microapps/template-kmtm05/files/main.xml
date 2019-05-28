@@ -1,0 +1,9 @@
+<GridLayout rows="*" loaded="{{ loaded }}" unloaded="{{ unloaded }}">
+    <GridLayout row="0">
+        <WebView src="{{ websiteUrl }} " loadFinished="{{ onViewLoadFinished }}" loaded="{{ onViewLoaded }}"></WebView>
+    </GridLayout>
+    <GridLayout row="0" visibility="{{ loaderVisibility }}" horizontalAlignment="center" verticalAlignment="center">
+        <ActivityIndicator busy="{{ busy }}" width="100" height="100">
+        </ActivityIndicator>
+    </GridLayout>
+</GridLayout>

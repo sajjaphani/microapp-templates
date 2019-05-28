@@ -1,0 +1,16 @@
+{
+    "name": "Accept / Cancel",
+    "description": "Accept/Reject card template.",
+    "requireCollection": true,
+    "icon": "",
+    "hasTestData": true,
+    "summary": "This card template can be used where a quick action such as accept/reject can be taken quickly based on the event. This template also contains sample data, and can be customzed based on the data that needs to shown as an event.",
+    "files": [
+        "templates/custom/cards/template-kmtc01/files/index.js",
+        "templates/custom/cards/template-kmtc01/files/main-model.js",
+        "templates/custom/cards/template-kmtc01/files/main.css",
+        "templates/custom/cards/template-kmtc01/files/main.js",
+        "templates/custom/cards/template-kmtc01/files/main.xml",
+        "templates/custom/cards/template-kmtc01/files/sample-data.json"
+    ]
+}

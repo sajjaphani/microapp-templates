@@ -1,0 +1,15 @@
+{
+    "name": "Barcode Scanner",
+    "description": "Barcode Scanner template",
+    "requireCollection": false,
+    "icon": "",
+    "hasTestData": false,
+    "summary": "This microapp UI template is tailered to scan any Barcode. It can scan different formats including EAN-8, EAN-13, Code 128, QR Code, Data Matrix and Aztec.",
+    "files": [
+        "templates/custom/microapps/template-kmtm03/files/index.js",
+        "templates/custom/microapps/template-kmtm03/files/main-model.js",
+        "templates/custom/microapps/template-kmtm03/files/main.css",
+        "templates/custom/microapps/template-kmtm03/files/main.js",
+        "templates/custom/microapps/template-kmtm03/files/main.xml"
+    ]
+}

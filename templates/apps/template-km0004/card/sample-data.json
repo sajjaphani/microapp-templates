@@ -1,0 +1,28 @@
+[
+    {
+        "_id": "servicenow-id1",
+        "name": "Machine Request",
+        "submittedOn": "2018-10-25T18:30:00.000Z",
+        "from": {
+            "name": "Sandra Young",
+            "avatar": "~/images/profiles/sandra.png"
+        },
+        "priority": "Medium",
+        "description": "Some brief description about the machine request.",
+        "location": "Hyderabad",
+        "productivityImpact": "Medium"
+    },
+    {
+        "_id": "servicenow-id2",
+        "name": "Machine Request",
+        "submittedOn": "2018-10-25T18:30:00.000Z",
+        "from": {
+            "name": "Paul Hoffman",
+            "avatar": "~/images/profiles/paul.png"
+        },
+        "priority": "High",
+        "description": "Some brief description about the machine request.",
+        "location": "Bedford",
+        "productivityImpact": "High"
+    }
+]

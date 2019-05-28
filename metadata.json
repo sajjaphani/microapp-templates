@@ -1,0 +1,164 @@
+{
+    "name": "Kinvey Microapps",
+    "description": "Metadata for Kinvey Microapps templates",
+    "microapps": [
+        {
+            "id": "template-km0001",
+            "metaFile": "templates/apps/template-km0001/app.json",
+            "name": "My Timeoff",
+            "description": "Submit/Update timeoff request.",
+            "icon": "0xf072",
+            "author": "Progress Software"
+        },
+        {
+            "id": "template-km0002",
+            "metaFile": "templates/apps/template-km0002/app.json",
+            "name": "My Expenses",
+            "description": "Submit corporate expenses.",
+            "icon": "0xf0d6",
+            "author": "Progress Software"
+        },
+        {
+            "id": "template-km0003",
+            "metaFile": "templates/apps/template-km0003/app.json",
+            "name": "Kinvey Chat",
+            "description": "Progress Kinvey Chat integration with Kinvey Microapps.",
+            "icon": "0xf086",
+            "author": "Progress Software"
+        },
+        {
+            "id": "template-km0004",
+            "metaFile": "templates/apps/template-km0004/app.json",
+            "name": "New Machine Request",
+            "description": "Submit a new development machine request.",
+            "icon": "0xf072",
+            "author": "Progress Software"
+        },
+        {
+            "id": "template-km0005",
+            "metaFile": "templates/apps/template-km0005/app.json",
+            "name": "Incident & Service",
+            "description": "Incident & Service microapp.",
+            "icon": "0xf26c",
+            "author": "Progress Software"
+        },
+        {
+            "id": "template-km0006",
+            "metaFile": "templates/apps/template-km0006/app.json",
+            "name": "Create New Lead",
+            "description": "Create new sales lead microapp.",
+            "icon": "0xf007",
+            "author": "Progress Software"
+        }
+    ],
+    "custom-templates": {
+        "cards": [
+            {
+                "id": "template-kmtc01",
+                "metaFile": "templates/custom/cards/template-kmtc01/app.json",
+                "name": "Accept / Cancel",
+                "description": "Accept / Cancel",
+                "icon": "",
+                "author": ""
+            },
+            {
+                "id": "template-kmtc02",
+                "metaFile": "templates/custom/cards/template-kmtc02/app.json",
+                "name": "Corporate Events",
+                "description": "Corporate Events",
+                "icon": "",
+                "author": ""
+            },
+            {
+                "id": "template-kmtc03",
+                "metaFile": "templates/custom/cards/template-kmtc03/app.json",
+                "name": "Poll / Vote",
+                "description": "Poll / Vote",
+                "icon": "",
+                "author": ""
+            },
+            {
+                "id": "template-kmtc04",
+                "metaFile": "templates/custom/cards/template-kmtc04/app.json",
+                "name": "My Pay",
+                "description": "My Pay",
+                "icon": "",
+                "author": ""
+            },
+            {
+                "id": "template-kmtc05",
+                "metaFile": "templates/custom/cards/template-kmtc05/app.json",
+                "name": "Custom Card",
+                "description": "Custom Card",
+                "icon": "",
+                "author": ""
+            },
+            {
+                "id": "template-kmtc06",
+                "metaFile": "templates/custom/cards/template-kmtc06/app.json",
+                "name": "Blank / None",
+                "description": "Blank / None",
+                "icon": "",
+                "author": ""
+            }
+        ],
+        "microapps": [
+            {
+                "id": "template-kmtm01",
+                "metaFile": "templates/custom/microapps/template-kmtm02/app.json",
+                "name": "Master / Details",
+                "description": "Master / Details",
+                "icon": "",
+                "author": ""
+            },
+            {
+                "id": "template-kmtm02",
+                "metaFile": "templates/custom/microapps/template-kmtm02/app.json",
+                "name": "Sample Form",
+                "description": "Sample Form",
+                "icon": "",
+                "author": ""
+            },
+            {
+                "id": "template-kmtm03",
+                "metaFile": "templates/custom/microapps/template-kmtm03/app.json",
+                "name": "Barcode Scanner",
+                "description": "Barcode Scanner",
+                "icon": "",
+                "author": ""
+            },
+            {
+                "id": "template-kmtm04",
+                "metaFile": "templates/custom/microapps/template-kmtm04/app.json",
+                "name": "Capture Signature",
+                "description": "Capture Signature",
+                "icon": "",
+                "author": ""
+            },
+            {
+                "id": "template-kmtm05",
+                "metaFile": "templates/custom/microapps/template-kmtm05/app.json",
+                "name": "Website",
+                "description": "Website",
+                "icon": "",
+                "author": ""
+            },
+            {
+                "id": "template-kmtm06",
+                "metaFile": "templates/custom/microapps/template-kmtm06/app.json",
+                "name": "Custom Microapp UI",
+                "description": "Custom Microapp UI",
+                "icon": "",
+                "author": ""
+            },
+            {
+                "id": "template-kmtm07",
+                "metaFile": "templates/custom/microapps/template-kmtm06/app.json",
+                "name": "Blank / None",
+                "description": "Blank / None",
+                "icon": "",
+                "author": ""
+            }
+        ]
+    }
+}

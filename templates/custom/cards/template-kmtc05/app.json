@@ -1,0 +1,15 @@
+{
+    "name": "Custom Card",
+    "description": "Build card of your own.",
+    "requireCollection": false,
+    "icon": "",
+    "hasTestData": false,
+    "summary": "This custom card UI template can be used to design any kind notification events. For example, it can be used show a barchart/pie chart. Just add the necessary UI elements and bind accordingly.",
+    "files": [
+        "templates/custom/cards/template-kmtc05/files/index.js",
+        "templates/custom/cards/template-kmtc05/files/main-model.js",
+        "templates/custom/cards/template-kmtc05/files/main.css",
+        "templates/custom/cards/template-kmtc05/files/main.js",
+        "templates/custom/cards/template-kmtc05/files/main.xml"
+    ]
+}

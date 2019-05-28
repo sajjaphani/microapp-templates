@@ -1,0 +1,15 @@
+{
+    "name": "Blank / None",
+    "description": "The app template may not contribute a card.",
+    "requireCollection": false,
+    "icon": "",
+    "hasTestData": false,
+    "summary": "You can choose this option if your microapp does not have card specific events. This template is not meant to be rendered on the device.",
+    "files": [
+        "templates/custom/cards/template-kmtc06/files/index.js",
+        "templates/custom/cards/template-kmtc06/files/main-model.js",
+        "templates/custom/cards/template-kmtc06/files/main.css",
+        "templates/custom/cards/template-kmtc06/files/main.js",
+        "templates/custom/cards/template-kmtc06/files/main.xml"
+    ]
+}

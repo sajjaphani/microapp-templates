@@ -1,0 +1,22 @@
+{
+    "name": "Website",
+    "description": "Website template",
+    "requireCollection": false,
+    "icon": "",
+    "hasTestData": false,
+    "fields": [
+        {
+            "name": "websiteUrl",
+            "displayName": "Website URL",
+            "mandatory": true
+        }
+    ],
+    "summary": "This microapp UI template can be used to include a Website as a microapp. This can be useful, for example, to indlude your company website, or any other resoruces website for the employees.",
+    "files": [
+        "templates/custom/microapps/template-kmtm05/files/index.js",
+        "templates/custom/microapps/template-kmtm05/files/main-model.js",
+        "templates/custom/microapps/template-kmtm05/files/main.css",
+        "templates/custom/microapps/template-kmtm05/files/main.js",
+        "templates/custom/microapps/template-kmtm05/files/main.xml"
+    ]
+}

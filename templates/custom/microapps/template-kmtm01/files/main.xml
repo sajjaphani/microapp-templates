@@ -1,0 +1,63 @@
+<GridLayout rows="*" loaded="{{ loaded }}" unloaded="{{ unloaded }}" xmlns:lv="nativescript-ui-listview">
+    <GridLayout rows="auto, *" visibility="{{ listItemsVisibility }}">
+        <GridLayout row="0" class="search-bar" margin="5">
+            <StackLayout margin="10">
+                <GridLayout columns="auto, *" verticalAlignment="center" class="m-l-10 m-r-10">
+                    <StackLayout col="0" class="search-icon m-r-10">
+                        <Image src="res://search" width="16" height="16"></Image>
+                    </StackLayout>
+                    <TextField id="catalog-search-filter" text="{{ searchFilter }}" col="1" hint="Search Items"
+                        autocorrect="false" autocapitalizationType="none" class="eloha-font-regular form-field-text"
+                        verticalAlignment="center"></TextField>
+                </GridLayout>
+            </StackLayout>
+        </GridLayout>
+        <GridLayout row="1">
+            <lv:RadListView id="catalog-items-list" items="{{ items }}" selectionBehavior="Press"
+                itemSelected="{{ onItemSelected }}" itemLoading="{{ onItemLoading }}" class="list-group"
+                backgroundColor="#e6e6e6">
+                <lv:RadListView.listViewLayout>
+                    <lv:ListViewGridLayout scrollDirection="Vertical" ios:itemHeight="185" spanCount="2" />
+                </lv:RadListView.listViewLayout>
+                <lv:RadListView.itemTemplate>
+                    <GridLayout rows="*">
+                        <GridLayout android:class="grid-item-border" rows="*">
+                            <GridLayout rows="auto, *" margin="5" borderRadius="10">
+                                <Image row="0" src="{{ imageSrc }}" width="200" height="120" stretch="aspectFill"
+                                    class="grid-item-border-top" />
+                                <StackLayout row="1" backgroundColor="white" padding="10"
+                                    class="grid-item-border-bottom">
+                                    <Label text="{{ name }}" class="item-title" textWrap="true"></Label>
+                                    <!-- <Label text="{{ desc }}" class="item-description"></Label> -->
+                                    <Label text="{{ price }}" class="item-price"></Label>
+                                </StackLayout>
+                            </GridLayout>
+                        </GridLayout>
+                    </GridLayout>
+                </lv:RadListView.itemTemplate>
+            </lv:RadListView>
+        </GridLayout>
+    </GridLayout>
+    <GridLayout row="0" rows="*" visibility="{{ itemDetailsVisibility }}">
+        <GridLayout rows="auto" style="padding:10;">
+            <StackLayout row="0" class="item-details">
+                <StackLayout class="profile-details-close">
+                    <Label class="fa" text="&#xf00d;" style="color: #FFFFFF; font-size: 18;"
+                        tap="{{ onCloseTapped }}"></Label>
+                </StackLayout>
+                <GridLayout class="image-circle">
+                    <Image src="{{ selectedItem.imageSrc }}"
+                        style="clip-path: circle(90% at 50% 50%); border-radius:75%;" stretch="aspectFill"></Image>
+                </GridLayout>
+                <GridLayout rows="auto, auto, auto" horizontalAlignment="center" verticalAlignment="top">
+                    <Label row="0" text="{{ selectedItem.name }}" class="eloha-font-semibold m-t-20"
+                        style="text-align: center; font-size:16; color:#FFFFFF"></Label>
+                    <Label row="1" text="{{ 'Price: ' + selectedItem.price }}" class="eloha-font-regular m-t-10"
+                        style="text-align: center; font-size:14; color:#FFFFFF"></Label>
+                    <Label row="2" text="{{ selectedItem.desc }}" textWrap="true" class="eloha-font-regular m-t-3"
+                        style="text-align: center; font-size:14; color:#FFFFFF"></Label>
+                </GridLayout>
+            </StackLayout>
+        </GridLayout>
+    </GridLayout>
+</GridLayout>

@@ -1,0 +1,16 @@
+{
+    "name": "Master / Details",
+    "description": "Master / Details template.",
+    "requireCollection": true,
+    "icon": "",
+    "hasTestData": true,
+    "summary": "This microapp UI template is developed using master/details pattern. A master page contains a list of items and the detail page will displays the details of each item. This template also contains sample data of products, and can be customzed based on the data that needs to shown in master/details views.",
+    "files": [
+        "templates/custom/microapps/template-kmtm01/files/index.js",
+        "templates/custom/microapps/template-kmtm01/files/main-model.js",
+        "templates/custom/microapps/template-kmtm01/files/main.css",
+        "templates/custom/microapps/template-kmtm01/files/main.js",
+        "templates/custom/microapps/template-kmtm01/files/main.xml",
+        "templates/custom/microapps/template-kmtm01/files/sample-data.json"
+    ]
+}

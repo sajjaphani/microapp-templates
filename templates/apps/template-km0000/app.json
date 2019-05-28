@@ -1,0 +1,23 @@
+{
+    "id": "template-km0000",
+    "name": "",
+    "description": "",
+    "collectionName": "",
+    "icon": "0xf029",
+    "hasCardUi": false,
+    "hasMicroappUi": true,
+    "hasTestData": false,
+    "fields": [
+        {
+            "name": "botId",
+            "displayName": "Bot Id",
+            "mandatory": true
+        }
+    ],
+    "summary": "",
+    "files": {
+        "card": [],
+        "microapp": []
+    },
+    "version": "1.0.0"
+}

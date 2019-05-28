@@ -1,0 +1,18 @@
+{
+    "name": "",
+    "description": "",
+    "requireCollection": false,
+    "icon": "",
+    "hasTestData": false,
+    "fields": [
+        {
+            "name": "botId",
+            "displayName": "Bot Id",
+            "mandatory": true
+        }
+    ],
+    "summary": "",
+    "files": [
+        
+    ]
+}

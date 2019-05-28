@@ -1,0 +1,106 @@
+[
+    {
+        "_id": "poll-id1",
+        "name": "Poll",
+        "submittedOn": "2018-10-25T18:30:00.000Z",
+        "when": "2018-10-25T18:30:00.000Z",
+        "from": {
+            "name": "Sandra Young",
+            "avatar": "~/images/profiles/sandra.png"
+        },
+        "to": "All Employees",
+        "title": "Progressers, Have you booked your Q1 check-in meeting?",
+        "data": [
+            {
+                "id": "1",
+                "value": "Yes, I already had my check-in meeting"
+            },
+            {
+                "id": "2",
+                "value": "Yes, I will have it soon"
+            },
+            {
+                "id": "3",
+                "value": "Oops, I forgot about it"
+            },
+            {
+                "id": "4",
+                "value": "No, but I am going to do it right now"
+            }
+        ],
+        "result": [
+            {
+                "id": "1",
+                "value": "Yes, I already had my check-in meeting",
+                "votes": 64
+            },
+            {
+                "id": "2",
+                "value": "Yes, I will have it soon",
+                "votes": 21
+            },
+            {
+                "id": "3",
+                "value": "Oops, I forgot about it",
+                "votes": 3
+            },
+            {
+                "id": "4",
+                "value": "No, but I am going to do it right now",
+                "votes": 12
+            }
+        ]
+    },
+    {
+        "_id": "poll-id2",
+        "name": "Poll",
+        "when": "2018-10-24T18:30:00.000Z",
+        "submittedOn": "2018-10-24T18:30:00.000Z",
+        "from": {
+            "name": "Sandra Young",
+            "avatar": "~/images/profiles/sandra.png"
+        },
+        "to": "Hyderabad ALL",
+        "title": "How do you plan to commute this season?",
+        "data": [
+            {
+                "id": "5",
+                "value": "Own Transport"
+            },
+            {
+                "id": "6",
+                "value": "Office Transport"
+            },
+            {
+                "id": "7",
+                "value": "Car Pool"
+            },
+            {
+                "id": "8",
+                "value": "Public Transport"
+            }
+        ],
+        "result": [
+            {
+                "id": "5",
+                "value": "Own Transport",
+                "votes": 64
+            },
+            {
+                "id": "6",
+                "value": "Office Transport",
+                "votes": 21
+            },
+            {
+                "id": "7",
+                "value": "Car Pool",
+                "votes": 3
+            },
+            {
+                "id": "8",
+                "votes": 12,
+                "value": "Public Transport"
+            }
+        ]
+    }
+]

@@ -1,0 +1,23 @@
+{
+    "name": "My Pay",
+    "description": "Payslip template",
+    "requireCollection": false,
+    "icon": "",
+    "hasTestData": false,
+    "fields": [
+        {
+            "name": "botId",
+            "displayName": "Bot Id",
+            "mandatory": true
+        }
+    ],
+    "summary": "This card template can be used to generate a typical payslip and send them as events to the employees. This template also contains sample data, and can be customzed based on the data that needs to shown as an event.",
+    "files": [
+        "templates/custom/cards/template-kmtc04/files/index.js",
+        "templates/custom/cards/template-kmtc04/files/main-model.js",
+        "templates/custom/cards/template-kmtc04/files/main.css",
+        "templates/custom/cards/template-kmtc04/files/main.js",
+        "templates/custom/cards/template-kmtc04/files/main.xml",
+        "templates/custom/cards/template-kmtc04/files/sample-data.json"
+    ]
+}

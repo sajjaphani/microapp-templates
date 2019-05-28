@@ -1,0 +1,15 @@
+{
+    "name": "Custom Microapp UI",
+    "description": "Custom Microapp UI template",
+    "requireCollection": false,
+    "icon": "",
+    "hasTestData": false,
+    "summary": "This custom microapp UI template provides a bare skeleton and can be used to design any kind of UI. For example, a form can be designed on top of this.",
+    "files": [
+        "templates/custom/microapps/template-kmtm06/files/index.js",
+        "templates/custom/microapps/template-kmtm06/files/main-model.js",
+        "templates/custom/microapps/template-kmtm06/files/main.css",
+        "templates/custom/microapps/template-kmtm06/files/main.js",
+        "templates/custom/microapps/template-kmtm06/files/main.xml"
+    ]
+}

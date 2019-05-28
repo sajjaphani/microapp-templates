@@ -1,0 +1,36 @@
+[
+    {
+        "_id": "expenses-id1",
+        "name": "Expenses",
+        "when": "2018-10-25T18:30:00.000Z",
+        "submittedOn": "2018-10-25T18:30:00.000Z",
+        "from": {
+            "name": "Paul Hoffman",
+            "avatar": "~/images/profiles/paul.png"
+        },
+        "comments": "Team lunch during team activities.",
+        "title": "Team Activities",
+        "type": "Team Activities",
+        "dateOfExpense": "2018-10-25T18:30:00.000Z",
+        "place": "Hyderabad",
+        "amount": "₹2900",
+        "attachments": []
+    },
+    {
+        "_id": "expenses-id2",
+        "name": "Expenses",
+        "when": "2018-10-25T18:30:00.000Z",
+        "submittedOn": "2018-10-25T18:30:00.000Z",
+        "from": {
+            "name": "Sandra Young",
+            "avatar": "~/images/profiles/sandra.png"
+        },
+        "comments": "Team lunch during client visit.",
+        "title": "Client Visit",
+        "type": "Client Visit",
+        "dateOfExpense": "2018-10-25T18:30:00.000Z",
+        "place": "Bedford",
+        "amount": "$120",
+        "attachments": []
+    }
+]

@@ -1,0 +1,41 @@
+<GridLayout rows="auto, auto" class="card" loaded="{{ loaded }}" unloaded="{{ unloaded }}" xmlns:cards="cards">
+    <!-- Card Header-->
+    <cards:CardHeader name="{{ name }}"></cards:CardHeader>
+    <!-- Visible where there is an event/data... -->
+    <GridLayout row="1" visibility="{{ notificationsVisibility }}" class="card-feed-content">
+        <!-- Event Content -->
+        <Repeater items="{{ items }}">
+            <Repeater.itemTemplate orientation="horizontal">
+                <StackLayout class="card-feed-item-top" id="{{ id }}">
+                    <!-- Event Header -->
+                    <cards:EventHeader fromAvatar="{{ from.avatar }}" fromName="{{ from.name }}"
+                        submittedOn="{{ submittedOn }}" eventName="{{ name }}" eventIcon="&#xf0f2;"
+                        eventPriority="{{ eventPriority }}" eventInfo="{{ eventInfo }}">
+                    </cards:EventHeader>
+                    <!-- Event Content with Actions -->
+                    <GridLayout rows="auto, auto" class="p-b-15">
+                        <GridLayout row="0" rows="*">
+                            <GridLayout rows="*" class="p-10">
+                                <Label row="0" verticalAlignment="center" class="eloha-font-regular event-summary"
+                                    text="Add your other event data here." textWrap="true"></Label>
+                            </GridLayout>
+                        </GridLayout>
+                        <!-- Event Actions -->
+                        <GridLayout row="1" columns="*">
+                            <StackLayout col="1" horizontalAlignment="right">
+                                <Label row="0" verticalAlignment="center"
+                                    class="eloha-font-semibold event-summary m-r-10" text="Add your event actions here."
+                                    textWrap="true"></Label>
+                            </StackLayout>
+                        </GridLayout>
+                    </GridLayout>
+                </StackLayout>
+            </Repeater.itemTemplate>
+        </Repeater>
+    </GridLayout>
+    <!-- Else part -->
+    <!-- Visible where there is no event/data or an action is takle place... -->
+    <StackLayout row="1" visibility="{{ noNotificationsVisibility }}" class="card-feed-item-top">
+        <cards:NoCardEvent></cards:NoCardEvent>
+    </StackLayout>
+</GridLayout>

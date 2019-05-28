@@ -1,0 +1,15 @@
+{
+    "name": "Blank / None",
+    "description": "Blank / None template",
+    "requireCollection": false,
+    "icon": "",
+    "hasTestData": false,
+    "summary": "You can choose this option if your microapp does not have an app UI. This template is not meant to be rendered on the device.",
+    "files": [
+        "templates/custom/microapps/template-kmtm07/files/index.js",
+        "templates/custom/microapps/template-kmtm07/files/main-model.js",
+        "templates/custom/microapps/template-kmtm07/files/main.css",
+        "templates/custom/microapps/template-kmtm07/files/main.js",
+        "templates/custom/microapps/template-kmtm07/files/main.xml"
+    ]
+}

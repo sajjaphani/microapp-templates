@@ -1,0 +1,24 @@
+[
+    {
+        "_id": "accept-reject-card-id1",
+        "name": "Event Name",
+        "submittedOn": "2018-10-25T18:30:00.000Z",
+        "eventInfo": "A Date or Pririty Etc.",
+        "from": {
+            "name": "User Name",
+            "avatar": "~/images/profiles/user.png"
+        },
+        "comments": "Short summary of the event, based on this the user may accept/reject the event."
+    },
+    {
+        "_id": "accept-reject-card-id2",
+        "name": "Event Name",
+        "submittedOn": "2018-10-25T18:30:00.000Z",
+        "eventInfo": "A Date or Pririty Etc.",
+        "from": {
+            "name": "User Name",
+            "avatar": "~/images/profiles/user.png"
+        },
+        "comments": "Short summary of the event, based on this the user may accept/reject the event."
+    }
+]
