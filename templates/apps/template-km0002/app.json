@@ -2,6 +2,7 @@
     "id": "template-km0002",
     "name": "My Expenses",
     "description": "Summit corporate expenses.",
+    "requireCollection": true,
     "collectionName": "collection-my-expenses",
     "icon": "0xf0d6",
     "hasCardUi": true,

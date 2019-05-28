@@ -2,6 +2,7 @@
     "id": "template-km0001",
     "name": "My Timeoff",
     "description": "Submit/Update timeoff request.",
+    "requireCollection": true,
     "collectionName": "collection-my-timeoff",
     "icon": "0xf072",
     "hasCardUi": true,

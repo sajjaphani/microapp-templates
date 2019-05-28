@@ -2,6 +2,7 @@
     "id": "template-km0006",
     "name": "Create New Lead",
     "description": "Create new sales lead microapp.",
+    "requireCollection": true,
     "collectionName": "collection-leads",
     "icon": "0xf007",
     "hasCardUi": true,

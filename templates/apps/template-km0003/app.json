@@ -2,6 +2,7 @@
     "id": "template-km0003",
     "name": "Kinvey Chat",
     "description": "Progress Kinvey Chat integration with Kinvey Microapps.",
+    "requireCollection": false,
     "collectionName": "",
     "icon": "0xf086",
     "hasCardUi": false,

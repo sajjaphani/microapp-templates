@@ -2,6 +2,7 @@
     "id": "template-km0004",
     "name": "New Machine Request",
     "description": "Submit a new development machine request.",
+    "requireCollection": true,
     "collectionName": "collection-machine-request",
     "icon": "0xf072",
     "hasCardUi": true,

@@ -2,6 +2,7 @@
     "id": "template-km0005",
     "name": "Incident & Service",
     "description": "Incident & Service microapp.",
+    "requireCollection": true,
     "collectionName": "collection-incident-service'",
     "icon": "0xf26c",
     "hasCardUi": true,
