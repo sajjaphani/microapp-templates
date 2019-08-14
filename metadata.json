@@ -4,7 +4,7 @@
     "microapps": [
         {
             "id": "template-km0001",
-            "metaFile": "templates/apps/template-km0001/app.json",
+            "path": "templates/apps/template-km0001",
             "name": "My Timeoff",
             "description": "Submit/Update timeoff request.",
             "icon": "0xf072",
@@ -12,7 +12,7 @@
         },
         {
             "id": "template-km0002",
-            "metaFile": "templates/apps/template-km0002/app.json",
+            "path": "templates/apps/template-km0002",
             "name": "My Expenses",
             "description": "Submit corporate expenses.",
             "icon": "0xf0d6",
@@ -20,7 +20,7 @@
         },
         {
             "id": "template-km0003",
-            "metaFile": "templates/apps/template-km0003/app.json",
+            "path": "templates/apps/template-km0003",
             "name": "Kinvey Chat",
             "description": "Progress Kinvey Chat integration with Kinvey Microapps.",
             "icon": "0xf086",
@@ -28,7 +28,7 @@
         },
         {
             "id": "template-km0004",
-            "metaFile": "templates/apps/template-km0004/app.json",
+            "path": "templates/apps/template-km0004",
             "name": "New Machine Request",
             "description": "Submit a new development machine request.",
             "icon": "0xf072",
@@ -36,7 +36,7 @@
         },
         {
             "id": "template-km0005",
-            "metaFile": "templates/apps/template-km0005/app.json",
+            "path": "templates/apps/template-km0005",
             "name": "Incident & Service",
             "description": "Incident & Service microapp.",
             "icon": "0xf26c",
@@ -44,7 +44,7 @@
         },
         {
             "id": "template-km0006",
-            "metaFile": "templates/apps/template-km0006/app.json",
+            "path": "templates/apps/template-km0006",
             "name": "Create New Lead",
             "description": "Create new sales lead microapp.",
             "icon": "0xf007",
@@ -55,7 +55,7 @@
         "cards": [
             {
                 "id": "template-kmtc01",
-                "metaFile": "templates/custom/cards/template-kmtc01/app.json",
+                "path": "templates/custom/cards/template-kmtc01",
                 "name": "Accept / Cancel",
                 "description": "Accept / Cancel",
                 "icon": "",
@@ -63,7 +63,7 @@
             },
             {
                 "id": "template-kmtc02",
-                "metaFile": "templates/custom/cards/template-kmtc02/app.json",
+                "path": "templates/custom/cards/template-kmtc02",
                 "name": "Corporate Events",
                 "description": "Corporate Events",
                 "icon": "",
@@ -71,7 +71,7 @@
             },
             {
                 "id": "template-kmtc03",
-                "metaFile": "templates/custom/cards/template-kmtc03/app.json",
+                "path": "templates/custom/cards/template-kmtc03",
                 "name": "Poll / Vote",
                 "description": "Poll / Vote",
                 "icon": "",
@@ -79,7 +79,7 @@
             },
             {
                 "id": "template-kmtc04",
-                "metaFile": "templates/custom/cards/template-kmtc04/app.json",
+                "path": "templates/custom/cards/template-kmtc04",
                 "name": "My Pay",
                 "description": "My Pay",
                 "icon": "",
@@ -87,7 +87,7 @@
             },
             {
                 "id": "template-kmtc05",
-                "metaFile": "templates/custom/cards/template-kmtc05/app.json",
+                "path": "templates/custom/cards/template-kmtc05",
                 "name": "Custom Card",
                 "description": "Custom Card",
                 "icon": "",
@@ -95,7 +95,7 @@
             },
             {
                 "id": "template-kmtc06",
-                "metaFile": "templates/custom/cards/template-kmtc06/app.json",
+                "path": "templates/custom/cards/template-kmtc06",
                 "name": "Blank / None",
                 "description": "Blank / None",
                 "icon": "",
@@ -105,7 +105,7 @@
         "microapps": [
             {
                 "id": "template-kmtm01",
-                "metaFile": "templates/custom/microapps/template-kmtm02/app.json",
+                "path": "templates/custom/microapps/template-kmtm02",
                 "name": "Master / Details",
                 "description": "Master / Details",
                 "icon": "",
@@ -113,7 +113,7 @@
             },
             {
                 "id": "template-kmtm02",
-                "metaFile": "templates/custom/microapps/template-kmtm02/app.json",
+                "path": "templates/custom/microapps/template-kmtm02",
                 "name": "Sample Form",
                 "description": "Sample Form",
                 "icon": "",
@@ -121,7 +121,7 @@
             },
             {
                 "id": "template-kmtm03",
-                "metaFile": "templates/custom/microapps/template-kmtm03/app.json",
+                "path": "templates/custom/microapps/template-kmtm03",
                 "name": "Barcode Scanner",
                 "description": "Barcode Scanner",
                 "icon": "",
@@ -129,7 +129,7 @@
             },
             {
                 "id": "template-kmtm04",
-                "metaFile": "templates/custom/microapps/template-kmtm04/app.json",
+                "path": "templates/custom/microapps/template-kmtm04",
                 "name": "Capture Signature",
                 "description": "Capture Signature",
                 "icon": "",
@@ -137,7 +137,7 @@
             },
             {
                 "id": "template-kmtm05",
-                "metaFile": "templates/custom/microapps/template-kmtm05/app.json",
+                "path": "templates/custom/microapps/template-kmtm05",
                 "name": "Website",
                 "description": "Website",
                 "icon": "",
@@ -145,7 +145,7 @@
             },
             {
                 "id": "template-kmtm06",
-                "metaFile": "templates/custom/microapps/template-kmtm06/app.json",
+                "path": "templates/custom/microapps/template-kmtm06",
                 "name": "Custom Microapp UI",
                 "description": "Custom Microapp UI",
                 "icon": "",
@@ -153,7 +153,7 @@
             },
             {
                 "id": "template-kmtm07",
-                "metaFile": "templates/custom/microapps/template-kmtm06/app.json",
+                "path": "templates/custom/microapps/template-kmtm06",
                 "name": "Blank / None",
                 "description": "Blank / None",
                 "icon": "",
