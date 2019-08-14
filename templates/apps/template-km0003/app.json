@@ -25,7 +25,7 @@
             "mandatory": true
         }
     ],
-    "summary": "",
+    "summary": "This microapp has been tailored to add Progress Kinvey Chat as a Chatbot microapp for transactional use cases.",
     "files": {
         "card": [
             "templates/apps/template-km0003/card/index.js",
