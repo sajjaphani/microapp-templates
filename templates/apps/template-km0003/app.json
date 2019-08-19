@@ -32,8 +32,7 @@
             "templates/apps/template-km0003/card/main-model.js",
             "templates/apps/template-km0003/card/main.css",
             "templates/apps/template-km0003/card/main.js",
-            "templates/apps/template-km0003/card/main.xml",
-            "templates/apps/template-km0003/card/sample-data.json"
+            "templates/apps/template-km0003/card/main.xml"
         ],
         "microapp": [
             "templates/apps/template-km0003/microapp/index.js",
