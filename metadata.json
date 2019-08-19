@@ -3,48 +3,48 @@
     "description": "Metadata for Kinvey Microapps templates",
     "microapps": [
         {
-            "id": "template-km0001",
-            "path": "templates/apps/template-km0001",
+            "id": "template-km0004",
+            "path": "templates/apps/template-km0004",
             "name": "My Timeoff",
             "description": "Submit/Update timeoff request.",
             "icon": "0xf072",
             "author": "Progress Software"
         },
         {
-            "id": "template-km0002",
-            "path": "templates/apps/template-km0002",
+            "id": "template-km0005",
+            "path": "templates/apps/template-km0005",
             "name": "My Expenses",
             "description": "Submit corporate expenses.",
             "icon": "0xf0d6",
             "author": "Progress Software"
         },
         {
-            "id": "template-km0003",
-            "path": "templates/apps/template-km0003",
+            "id": "template-km0006",
+            "path": "templates/apps/template-km0006",
             "name": "Kinvey Chat",
             "description": "Progress Kinvey Chat integration with Kinvey Microapps.",
             "icon": "0xf086",
             "author": "Progress Software"
         },
         {
-            "id": "template-km0004",
-            "path": "templates/apps/template-km0004",
+            "id": "template-km0014",
+            "path": "templates/apps/template-km0014",
             "name": "New Machine Request",
             "description": "Submit a new development machine request.",
             "icon": "0xf072",
             "author": "Progress Software"
         },
         {
-            "id": "template-km0005",
-            "path": "templates/apps/template-km0005",
+            "id": "template-km0015",
+            "path": "templates/apps/template-km0015",
             "name": "Incident & Service",
             "description": "Incident & Service microapp.",
             "icon": "0xf26c",
             "author": "Progress Software"
         },
         {
-            "id": "template-km0006",
-            "path": "templates/apps/template-km0006",
+            "id": "template-km0016",
+            "path": "templates/apps/template-km0016",
             "name": "Create New Lead",
             "description": "Create new sales lead microapp.",
             "icon": "0xf007",

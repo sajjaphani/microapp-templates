@@ -3,21 +3,21 @@
     <cards:CardHeader name="{{ name }}"></cards:CardHeader>
     <!-- Visible where there is an event/data... -->
     <GridLayout row="1" visibility="{{ notificationsVisibility }}" class="card-feed-content">
-        <!-- Event Content -->
+        <!-- Card Content -->
         <Repeater items="{{ items }}">
             <Repeater.itemTemplate orientation="horizontal">
                 <StackLayout class="card-feed-item-top" id="{{ id }}">
-                    <!-- Event Header -->
+                    <!-- Card Header -->
                     <cards:EventHeader fromName="{{ from.name }}" fromAvatar="{{ from.avatar }}"
-                        submittedOn="{{ submittedOn }}" eventName="{{ name }}" eventIcon="&#xf0f2;"
-                        eventInfo="{{ when }}"></cards:EventHeader>
-                    <!-- Event Content with Actions -->
+                        submittedOn="{{ submittedOn }}" eventName="{{ name }}" eventIcon="&#xf024;"
+                        eventPriority="{{ priority }}" eventInfo="{{ priority }}"></cards:EventHeader>
+                    <!-- Card Content with Actions -->
                     <GridLayout rows="*, *" class="p-b-15">
                         <GridLayout row="0" verticalAlignment="top">
                             <StackLayout row="1" class="m-l-10 m-r-10">
-                                <Label class="eloha-font-regular event-summary m-t-10" text="{{ comments }}"
+                                <Label class="eloha-font-regular event-summary m-t-10" text="{{ description }}"
                                     textWrap="true"></Label>
-                                <StackLayout class="m-t-10" visibility="collapse" id="{{ 'more-details-' + id }}">
+                                <StackLayout class="m-t-10" visibility="collapse" id="{{  'more-details-' + id}}">
                                     <Repeater items="{{ data }}">
                                         <Repeater.itemTemplate orientation="horizontal">
                                             <Label class="m-t-5" style="font-size: 14; color: #133F64;">
@@ -29,21 +29,10 @@
                                             </Label>
                                         </Repeater.itemTemplate>
                                     </Repeater>
-                                    <Repeater items="{{ attachments }}">
-                                        <Repeater.itemTemplate orientation="horizontal">
-                                            <GridLayout tap="{{ $parents['Repeater'].onAttachmentTapped }}"
-                                                attachmentId="{{ id }}" itemId="{{ $parents['Repeater'].id }}"
-                                                class="m-t-10" columns="auto, *">
-                                                <Label class="fa attachment-container-left" text="&#xf0c6;"></Label>
-                                                <Label class="eloha-font-semibold attachment-container-right m-l-2"
-                                                    col="1" text="Attachment"></Label>
-                                            </GridLayout>
-                                        </Repeater.itemTemplate>
-                                    </Repeater>
                                 </StackLayout>
                             </StackLayout>
                         </GridLayout>
-                        <!-- Event Actions -->
+                        <!-- Card Actions -->
                         <GridLayout row="1" columns="auto, *" class="p-t-10">
                             <StackLayout col="0" orientation="horizontal">
                                 <cards:EventAction class="eloha-action-more" faIcon="&#xf141;"

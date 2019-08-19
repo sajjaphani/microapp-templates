@@ -1,0 +1,80 @@
+<!-- Incident/Service Microapp -->
+<GridLayout rows="*" loaded="{{ loaded }}" xmlns:components="components">
+    <GridLayout row="0" rows="*, auto" visibility="{{ formVisibility }}">
+        <ScrollView row="0">
+            <StackLayout row="0" margin="20">
+                <StackLayout class="m-t-15">
+                    <Label text="First Name" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-8">
+                        <components:TextField text="{{ First_Name__c }}" hint="First Name"></components:TextField>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-15">
+                    <Label text="Last Name" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-8">
+                        <components:TextField text="{{ Last_Name__c }}" hint="Last Name"></components:TextField>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-15">
+                    <Label text="Email" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-8">
+                        <components:TextField text="{{ Email__c }}" hint="Email"></components:TextField>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-15">
+                    <Label text="Phone" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-8">
+                        <components:TextField text="{{ Phone_Number__c }}" hint="Phone"></components:TextField>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-15">
+                    <Label text="Company" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-8">
+                        <components:TextField text="{{ Company__c }}" hint="Company"></components:TextField>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-10">
+                    <Label text="Status" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-5">
+                        <components:ListPicker title="Category" items="{{ statusTypes }}"
+                            selectedItem="{{ Lead_Status__c }}">
+                        </components:ListPicker>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-10">
+                    <Label text="Description" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-5">
+                        <components:TextView text="{{ Description__c }}" hint="Description"></components:TextView>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        <GridLayout rows="*" row="1" verticalAlignment="bottom" style="height:80; background-color: #E7EDF5">
+            <Button class="eloha-font-semibold form-button-submit" tap="{{ onSubmitTapped }}" text="Submit"></Button>
+        </GridLayout>
+    </GridLayout>
+    <StackLayout visibility="{{ statusVisibility }}">
+        <GridLayout class="m-t-20" rows="auto, auto" columns="*">
+            <GridLayout style="margin-top: 50" row="0" rows="*, auto" horizontalAlignment="center">
+                <StackLayout row="0">
+                    <Label text="&#xf15b;" class="fa form-status-icon" horizontalAlignment="center"></Label>
+                </StackLayout>
+                <StackLayout row="0">
+                    <Label text="&#xf058;" class="fa form-status-ok-icon" style="margin-top: 30"
+                        horizontalAlignment="center"></Label>
+                </StackLayout>
+                <GridLayout class="m-t-20" row="1" rows="*" horizontalAlignment="center">
+                    <Label text="Lead Created Successfully" class="form-status-message"></Label>
+                </GridLayout>
+            </GridLayout>
+            <GridLayout style="margin-top: 80" row="1" rows="*, auto" horizontalAlignment="center">
+                <StackLayout row="0" tap="{{ onCreateNewTapped }}">
+                    <Label class="eloha-font-semibold form-status-new-item" text="+ CREATE NEW LEAD"></Label>
+                </StackLayout>
+                <StackLayout class="m-t-10" row="1" horizontalAlignment="center" tap="{{ onCloseTapped }}">
+                    <Label class="eloha-font-semibold" text="EXIT" class="form-status-exit"></Label>
+                </StackLayout>
+            </GridLayout>
+        </GridLayout>
+    </StackLayout>
+</GridLayout>

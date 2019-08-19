@@ -1,0 +1,29 @@
+{
+    "id": "template-km0016",
+    "name": "Create New Lead",
+    "description": "Create new sales lead microapp.",
+    "requireCollection": true,
+    "collectionName": "collection-leads",
+    "icon": "0xf007",
+    "hasCardUi": true,
+    "hasMicroappUi": true,
+    "hasTestData": false,
+    "summary": "Microapps which contains simple form to create new sales leads. This can be used to integrate with sales systems like Salesforce etc.",
+    "files": {
+        "card": [
+            "templates/apps/template-km0016/card/index.js",
+            "templates/apps/template-km0016/card/main-model.js",
+            "templates/apps/template-km0016/card/main.css",
+            "templates/apps/template-km0016/card/main.js",
+            "templates/apps/template-km0016/card/main.xml"
+        ],
+        "microapp": [
+            "templates/apps/template-km0016/microapp/index.js",
+            "templates/apps/template-km0016/microapp/main-model.js",
+            "templates/apps/template-km0016/microapp/main.css",
+            "templates/apps/template-km0016/microapp/main.js",
+            "templates/apps/template-km0016/microapp/main.xml"
+        ]
+    },
+    "version": "1.0.0"
+}

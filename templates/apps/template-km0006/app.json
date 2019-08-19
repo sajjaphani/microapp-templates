@@ -1,14 +1,31 @@
 {
     "id": "template-km0006",
-    "name": "Create New Lead",
-    "description": "Create new sales lead microapp.",
-    "requireCollection": true,
-    "collectionName": "collection-leads",
-    "icon": "0xf007",
-    "hasCardUi": true,
+    "name": "Kinvey Chat",
+    "description": "Progress Kinvey Chat integration with Kinvey Microapps.",
+    "requireCollection": false,
+    "collectionName": "",
+    "icon": "0xf086",
+    "hasCardUi": false,
     "hasMicroappUi": true,
     "hasTestData": false,
-    "summary": "Microapps which contains simple form to create new sales leads. This can be used to integrate with sales systems like Salesforce etc.",
+    "fields": [
+        {
+            "name": "botId",
+            "displayName": "Bot Id",
+            "mandatory": true
+        },
+        {
+            "name": "channelId",
+            "displayName": "Channel Id",
+            "mandatory": true
+        },
+        {
+            "name": "channelToken",
+            "displayName": "Channel Token",
+            "mandatory": true
+        }
+    ],
+    "summary": "This microapp has been tailored to add Progress Kinvey Chat as a Chatbot microapp for transactional use cases.",
     "files": {
         "card": [
             "templates/apps/template-km0006/card/index.js",

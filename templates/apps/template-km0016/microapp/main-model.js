@@ -1,9 +1,11 @@
 const fromObject = require("~/common/modules/data/observable").fromObject;
+
 var frames = require("~/common/modules/ui/frame");
 const imageSourceModule = require("~/common/modules/image-source");
 
-const { create } = require("~/common/kinvey-service");
-const { takePicture } = require("~/common/utility-service");
+const { create, upload } = require("~/common/kinvey-service");
+const { takePicture, getTempFile } = require("~/common/utility-service");
+const { showAlert } = require("~/common/utility-service");
 
 let appJson = require("../app.json");
 
@@ -15,26 +17,19 @@ function _loaded(args) {
 
 function _onSubmitTapped(args) {
     const data = {
-        name: 'Expenses', when: source.when,
-        submittedOn: new Date().toISOString(),
-        from: {
-            name: 'Sandra Young',
-            avatar: '~/images/profiles/sandra.png',
-        },
-        title: source.title,
-        type: source.selectedExpenseType,
-        place: source.place,
-        dateOfExpense: source.when,
-        amount: source.amount,
-        comments: source.comments,
-        status: 'New',
-        attachments: source.attachments
+        First_Name__c: source.First_Name__c,
+        Last_Name__c: source.Last_Name__c,
+        Email__c: source.Email__c,
+        Phone_Number__c: source.Phone_Number__c,
+        Company__c: source.Company__c,
+        Lead_Status__c: source.Lead_Status__c,
+        Description__c: source.Description__c,
     };
 
     create(appJson.collectionName, data)
         .subscribe(
-            data => { updateUi() },
-            error => { console.log(error) },
+            data => { _updateUi() },
+            error => { showAlert("Problem in Performing Action", error.message) },
             () => { });
 }
 
@@ -51,22 +46,27 @@ function _onUploadTapped(args) {
     takePicture()
         .then(function (imageAsset) {
             let _source = new imageSourceModule.ImageSource();
-            _source.fromAsset(imageAsset).then((imageSource) => {
-                const base64image = imageSource.toBase64String('png');
-                source.attachments[0] = {
-                    type: 'base64',
-                    contents: base64image
-                };
-            });
-
-            source.cameraImage = imageAsset;
-            source.imageName = 'Receipt Selected.'
+            _source.fromAsset(imageAsset)
+                .then((imageSource) => {
+                    source.cameraImage = imageAsset;
+                    source.imageName = 'Image Selected.'
+                    return imageSource;
+                }).then((imageSource) => {
+                    let imagePath = getTempFile('png');
+                    imageSource.saveToFile(imagePath, 'png');
+                    return upload(imagePath)
+                }).then(file => {
+                    source.attachments[0] = {
+                        type: 'kfile',
+                        contents: file._filename
+                    };
+                });
         }).catch(function (err) {
             console.log("Error -> " + err.message);
         });
 }
 
-function updateUi() {
+function _updateUi() {
     // reset fields to initials
     source.statusVisibility = "visible";
     source.formVisibility = "collapse";
@@ -75,22 +75,14 @@ function updateUi() {
 // The binding
 let source = fromObject({
     name: appJson.name,
-    expenseTypes: ["Client Visit", "Team activities", "Marketing", "Miscellaneous"],
-    expenseTypeVisibility: "collapse",
-    selectedExpenseType: "Expense Type",
-    canUpdateExpenseType: false,
-    date: new Date(),
-    when: undefined,
-    title: undefined,
-    place: undefined,
-    amount: undefined,
-    comments: undefined,
-    attachments: [],
-    selectedDateVisibility: "collapse",
-    selectedDate: "Expense Date",
-    canUpdateDate: false,
-    cameraImage: undefined,
-    imageName: "Upload Receipt",
+    First_Name__c: "",
+    Last_Name__c: "",
+    Email__c: "",
+    Phone_Number__c: "",
+    Company__c: "",
+    Lead_Status__c: "Status",
+    Description__c: "",
+    statusTypes: ["New", "Marketing Qualified", "Marketing Accepted", "Sales Qualified", "Sales Accepted", "Disqualified"],
     formVisibility: "visible",
     statusVisibility: "collapse",
     currentView: undefined,

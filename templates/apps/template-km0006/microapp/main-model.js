@@ -1,102 +1,70 @@
 const fromObject = require("~/common/modules/data/observable").fromObject;
 
-var frames = require("~/common/modules/ui/frame");
-const imageSourceModule = require("~/common/modules/image-source");
+var app = require("~/common/modules/application");
 
-const { create, upload } = require("~/common/kinvey-service");
-const { takePicture, getTempFile } = require("~/common/utility-service");
-const { showAlert } = require("~/common/utility-service");
+var { getNativeChatUrl } = require("~/common/nativechat-util");
 
-let appJson = require("../app.json");
+const appJson = require("../app.json");
+const config = require("../config.json");
+
+var _config = new fromObject({
+    botId: config.botId,
+    channelId: config.channelId,
+    channelToken: config.channelToken,
+    user: {
+        name: "Guest"
+    },
+    session: {
+        clear: true,
+        userMessage: "Hi",
+        context: {
+            company: "Progress Software",
+            phone: "555 555 5555"
+        }
+    }
+});
 
 function _loaded(args) {
+    source.name = appJson.name;
     source.currentView = args.object;
-    source.statusVisibility = "collapse";
-    source.formVisibility = "visible";
+    let nativechatUrl = getNativeChatUrl(_config);
+    source.nativechatUrl = nativechatUrl;
+    source.busy = true;
+    source.loaderVisibility = "visible";
 }
 
-function _onSubmitTapped(args) {
-    const data = {
-        First_Name__c: source.First_Name__c,
-        Last_Name__c: source.Last_Name__c,
-        Email__c: source.Email__c,
-        Phone_Number__c: source.Phone_Number__c,
-        Company__c: source.Company__c,
-        Lead_Status__c: source.Lead_Status__c,
-        Description__c: source.Description__c,
-    };
-
-    create(appJson.collectionName, data)
-        .subscribe(
-            data => { _updateUi() },
-            error => { showAlert("Problem in Performing Action", error.message) },
-            () => { });
+function _onWebViewLoadFinished(args) {
+    source.busy = false;
+    source.loaderVisibility = "collapse"
 }
 
-function _onCreateNewTapped(args) {
-    source.statusVisibility = "collapse";
-    source.formVisibility = "visible";
-}
+function _onWebViewLoaded(args) {
+    source.nativeChatVisibility = 'visible'
+    const wv = args.object;
 
-function _onCloseTapped(args) {
-    frames.topmost().goBack();
-}
-
-function _onUploadTapped(args) {
-    takePicture()
-        .then(function (imageAsset) {
-            let _source = new imageSourceModule.ImageSource();
-            _source.fromAsset(imageAsset)
-                .then((imageSource) => {
-                    source.cameraImage = imageAsset;
-                    source.imageName = 'Image Selected.'
-                    return imageSource;
-                }).then((imageSource) => {
-                    let imagePath = getTempFile('png');
-                    imageSource.saveToFile(imagePath, 'png');
-                    return upload(imagePath)
-                }).then(file => {
-                    source.attachments[0] = {
-                        type: 'kfile',
-                        contents: file._filename
-                    };
-                });
-        }).catch(function (err) {
-            console.log("Error -> " + err.message);
-        });
-}
-
-function _updateUi() {
-    // reset fields to initials
-    source.statusVisibility = "visible";
-    source.formVisibility = "collapse";
+    // hide those ugly Android zoomcontrols
+    if (wv && wv.android) {
+        wv.android.getSettings().setBuiltInZoomControls(false);
+        let window = app.android.startActivity.getWindow();
+        window.setSoftInputMode(
+            android.view.WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE
+        );
+    }
 }
 
 // The binding
 let source = fromObject({
     name: appJson.name,
-    First_Name__c: "",
-    Last_Name__c: "",
-    Email__c: "",
-    Phone_Number__c: "",
-    Company__c: "",
-    Lead_Status__c: "Status",
-    Description__c: "",
-    statusTypes: ["New", "Marketing Qualified", "Marketing Accepted", "Sales Qualified", "Sales Accepted", "Disqualified"],
-    formVisibility: "visible",
-    statusVisibility: "collapse",
+    nativechatUrl: "https://eloha.io/",
+    busy: true,
+    loaderVisibility: "visible",
+    nativeChatVisibility: 'collapse',
     currentView: undefined,
-    onUploadTapped: (args) => {
-        _onUploadTapped(args)
+    onViewLoadFinished: (args) => {
+        _onWebViewLoadFinished(args);
     },
-    onSubmitTapped: (args) => {
-        _onSubmitTapped(args);
-    },
-    onCreateNewTapped: (args) => {
-        _onCreateNewTapped(args);
-    },
-    onCloseTapped: (args) => {
-        _onCloseTapped(args);
+    onViewLoaded: (args) => {
+        _onWebViewLoaded(args);
     },
     loaded: (args) => {
         _loaded(args);

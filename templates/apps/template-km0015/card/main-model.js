@@ -1,9 +1,6 @@
 const ObservableArray = require("~/common/modules/data/observable-array").ObservableArray;
 const fromObject = require("~/common/modules/data/observable").fromObject;
 
-const StackLayout = require("~/common/modules/ui/layouts/stack-layout").StackLayout;
-const Image = require("~/common/modules/ui/image").Image;
-
 const { EventAccept, EventCancel } = require("~/cards");
 
 const { PullToRefresh } = require("~/common/subscriptions");
@@ -31,43 +28,30 @@ function _loaded(args) {
     source.initialized = true;
 }
 
-function formatAttachments(attachments) {
-    let obsArray = new ObservableArray();
-    if (attachments && attachments.length > 0) {
-        attachments.forEach((item, index) => {
-            obsArray.push(fromObject({
-                id: index,
-                type: item.type,
-                contents: item.contents,
-                onAttachmentTapped: (args) => {
-                    _onAttachmentTapped(args);
-                }
-            }))
-        })
-    }
+function _getFirstAttachment(attachments) {
+    attachments = attachments || [];
 
-    return obsArray;
+    return attachments[0]
 }
 
 function _toFormattedObject(item) {
-    return getImageSource(item.attachment)
+    return getImageSource(_getFirstAttachment(item.attachments))
         .then(imgSrc => {
             return fromObject({
                 id: item._id,
                 name: item.name,
-                when: toDate(item.when),
                 submittedOn: fromNow(item.submittedOn),
                 from: fromObject(item.from),
                 image: imgSrc,
                 priority: item.priority,
-                comments: item.comments,
+                summary: item.summary,
                 data: new ObservableArray([
-                    fromObject({ key: 'Title', value: item.title }),
-                    fromObject({ key: 'Date of Expense', value: item.dateOfExpense }),
-                    fromObject({ key: 'Amount', value: item.amount }),
-                    fromObject({ key: 'Place', value: item.place }),
+                    fromObject({ key: 'Date', value: toDate(item.when) }),
+                    fromObject({ key: 'Category', value: item.category }),
+                    fromObject({ key: 'Business Service', value: item.businessService }),
+                    fromObject({ key: 'Impact', value: item.impact }),
+                    fromObject({ key: 'Priority', value: item.priority }),
                 ]),
-                attachments: formatAttachments(item.attachments)
             });
         })
 }
@@ -115,13 +99,13 @@ function _updateUiAndRemoveItem(item, status) {
         let view = source.currentView.getViewById(item.id);
         view.removeChildren();
         let cancelEvent = new EventAccept();
-        cancelEvent.text = "Expenses Accepted";
+        cancelEvent.text = "Ticket Accepted";
         view.addChild(cancelEvent);
     } else {
         let view = source.currentView.getViewById(item.id);
         view.removeChildren();
         let cancelEvent = new EventCancel();
-        cancelEvent.text = "Expenses Cancelled";
+        cancelEvent.text = "Ticket Cancelled";
         view.addChild(cancelEvent);
     }
 
@@ -186,34 +170,6 @@ function _onMoreTapped(args) {
         let newVisibility = changeVisibility(view.visibility);
         view.visibility = newVisibility;
     }
-}
-
-function _onAttachmentTapped(args) {
-    const mainView = args.object;
-    let attachmentId = args.object.attachmentId;
-    let itemId = args.object.itemId;
-    let itemIndex = source.items.map(function (item) { return item.id; }).indexOf(itemId);
-    let item = source.items.getItem(itemIndex);
-
-    getImageSource(item.attachments.getItem(attachmentId))
-        .then(imgSrc => {
-            let image = new Image();
-            image.src = imgSrc;
-            image.stretch = 'aspectFill'
-
-            let modelContent = new StackLayout();
-            modelContent.cssClasses.add("m-10");
-            modelContent.addChild(image);
-
-            const context = { view: modelContent };
-
-            setTimeout(() => {
-                const modalViewModule = "modal/modal-view";
-                const fullscreen = true;
-                mainView.showModal(modalViewModule, context, () => {
-                }, fullscreen);
-            }, 100);
-        });
 }
 
 // The binding

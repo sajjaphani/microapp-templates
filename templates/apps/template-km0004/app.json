@@ -1,14 +1,14 @@
 {
     "id": "template-km0004",
-    "name": "New Machine Request",
-    "description": "Submit a new development machine request.",
+    "name": "My Timeoff",
+    "description": "Submit/Update timeoff request.",
     "requireCollection": true,
-    "collectionName": "collection-machine-request",
+    "collectionName": "collection-my-timeoff",
     "icon": "0xf072",
     "hasCardUi": true,
     "hasMicroappUi": true,
     "hasTestData": true,
-    "summary": "This microapp contains a feed item for showing development machine reuests as events for approval and also has an app UI for creating new development machine requests. This microapp can be used to integrate with an IT management system such as Servicenow. This template also contains sample data, and can be customzed based on the data that needs to shown as an event.",
+    "summary": "This microapp contains a feed item to show employee time-off requests for aproval and also has an app UI for submitting time-off requests. This microapp can be customzied to integrate into any employee time-off management system such as Workday. This template also contains sample data, and can be customzed based on the data that needs to shown as an event.",
     "files": {
         "card": [
             "templates/apps/template-km0004/card/index.js",

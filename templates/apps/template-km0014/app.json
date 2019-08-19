@@ -1,0 +1,30 @@
+{
+    "id": "template-km0014",
+    "name": "New Machine Request",
+    "description": "Submit a new development machine request.",
+    "requireCollection": true,
+    "collectionName": "collection-machine-request",
+    "icon": "0xf072",
+    "hasCardUi": true,
+    "hasMicroappUi": true,
+    "hasTestData": true,
+    "summary": "This microapp contains a feed item for showing development machine reuests as events for approval and also has an app UI for creating new development machine requests. This microapp can be used to integrate with an IT management system such as Servicenow. This template also contains sample data, and can be customzed based on the data that needs to shown as an event.",
+    "files": {
+        "card": [
+            "templates/apps/template-km0014/card/index.js",
+            "templates/apps/template-km0014/card/main-model.js",
+            "templates/apps/template-km0014/card/main.css",
+            "templates/apps/template-km0014/card/main.js",
+            "templates/apps/template-km0014/card/main.xml",
+            "templates/apps/template-km0014/card/sample-data.json"
+        ],
+        "microapp": [
+            "templates/apps/template-km0014/microapp/index.js",
+            "templates/apps/template-km0014/microapp/main-model.js",
+            "templates/apps/template-km0014/microapp/main.css",
+            "templates/apps/template-km0014/microapp/main.js",
+            "templates/apps/template-km0014/microapp/main.xml"
+        ]
+    },
+    "version": "1.0.0"
+}

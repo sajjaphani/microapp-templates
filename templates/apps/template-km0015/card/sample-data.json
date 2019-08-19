@@ -1,0 +1,34 @@
+[
+    {
+        "_id": "incident-service-id1",
+        "name": "Ticket",
+        "when": "2018-10-25T18:30:00.000Z",
+        "submittedOn": "2018-10-25T18:30:00.000Z",
+        "from": {
+            "name": "Paul Hoffman",
+            "avatar": "~/images/profiles/paul.png"
+        },
+        "summary": "Automatic Bending Machine 'ID:02B3' broke while in production. Request immediate fix, impacating production.",
+        "category": "Breakdown",
+        "businessService": "Production Line",
+        "impact": "Production Downtime",
+        "priority": "High",
+        "attachments": []
+    },
+    {
+        "_id": "incident-service-id2",
+        "name": "Ticket",
+        "when": "2018-10-25T18:30:00.000Z",
+        "submittedOn": "2018-10-25T18:30:00.000Z",
+        "from": {
+            "name": "Sandra Young",
+            "avatar": "~/images/profiles/sandra.png"
+        },
+        "summary": "Need you to replace a timing belt for one of the robotic arms at the Eloha Factory within two hours to avoid assembly line downtime.",
+        "category": "Routine Check",
+        "businessService": "Other",
+        "impact": "Delay Production",
+        "priority": "Medium",
+        "attachments": []
+    }
+]

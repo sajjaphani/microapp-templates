@@ -1,32 +1,27 @@
+<!-- Dev. Machine Request Microapp -->
 <GridLayout rows="*" loaded="{{ loaded }}" xmlns:components="components">
-    <GridLayout rows="*, auto" visibility="{{ formVisibility }}">
-        <ScrollView row="0">
+    <GridLayout row="0" rows="*, auto" visibility="{{ formVisibility }}">
+        <ScrollView row="0" visibility="{{ formShow }}">
             <StackLayout row="0" margin="20">
-                <Label text="Apply Timeoff" class="eloha-font-bold form-heading"></Label>
+                <Label text="New Dev. Machine Request" class="eloha-font-bold form-heading"></Label>
                 <StackLayout class="m-t-15">
-                    <Label text="Type" class="eloha-font-semibold form-field-label"></Label>
+                    <Label text="Description" class="eloha-font-semibold form-field-label"></Label>
                     <StackLayout class="m-t-8">
-                        <components:ListPicker title="Type" items="{{ vacationTypes }}"
-                            selectedItem="{{ selectedVacationType }}"></components:ListPicker>
+                        <components:TextView text="{{ description }}" hint="Description"></components:TextView>
                     </StackLayout>
                 </StackLayout>
                 <StackLayout class="m-t-15">
-                    <Label text="From" class="eloha-font-semibold form-field-label"></Label>
+                    <Label text="Machine Location" class="eloha-font-semibold form-field-label"></Label>
                     <StackLayout class="m-t-8">
-                        <components:DatePicker selectedDate="{{ fromDate }}"></components:DatePicker>
+                        <components:ListPicker items="{{ locationTypes }}" selectedItem="{{ selectedLocation }}"
+                            title="Machine Location"></components:ListPicker>
                     </StackLayout>
                 </StackLayout>
                 <StackLayout class="m-t-15">
-                    <Label text="To" class="eloha-font-semibold form-field-label"></Label>
+                    <Label text="Productivity Impact" class="eloha-font-semibold form-field-label"></Label>
                     <StackLayout class="m-t-8">
-                        <components:DatePicker selectedDate="{{ toDate }}"></components:DatePicker>
-                    </StackLayout>
-                </StackLayout>
-                <StackLayout class="m-t-15">
-                    <Label text="Comments" class="eloha-font-semibold form-field-label"></Label>
-                    <StackLayout class="m-t-8">
-                        <components:TextView text="{{ comments }}" hint="Comments">
-                        </components:TextView>
+                        <components:ListPicker items="{{ impactTypes }}" selectedItem="{{ selectedImpact }}"
+                            title="Productivity Impact"></components:ListPicker>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
@@ -46,12 +41,12 @@
                         horizontalAlignment="center"></Label>
                 </StackLayout>
                 <GridLayout class="m-t-20" row="1" rows="*" horizontalAlignment="center">
-                    <Label text="Timeoff Submitted Successfully" class="form-status-message"></Label>
+                    <Label text="Request Submitted Successfully" class="form-status-message"></Label>
                 </GridLayout>
             </GridLayout>
             <GridLayout style="margin-top: 80" row="1" rows="*, auto" horizontalAlignment="center">
                 <StackLayout row="0" tap="{{ onCreateNewTapped }}">
-                    <Label class="eloha-font-semibold form-status-new-item" text="+ CREATE NEW TIMEOFF"></Label>
+                    <Label class="eloha-font-semibold form-status-new-item" text="+ CREATE NEW REQUEST"></Label>
                 </StackLayout>
                 <StackLayout class="m-t-10" row="1" horizontalAlignment="center" tap="{{ onCloseTapped }}">
                     <Label class="eloha-font-semibold" text="EXIT" class="form-status-exit"></Label>

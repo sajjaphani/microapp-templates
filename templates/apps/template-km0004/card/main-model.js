@@ -4,7 +4,8 @@ const fromObject = require("~/common/modules/data/observable").fromObject;
 const { EventAccept, EventCancel } = require("~/cards");
 
 const { PullToRefresh } = require("~/common/subscriptions");
-const { fromNow, toDate } = require("~/common/transformations");
+const { toRange, fromNow } = require("~/common/transformations");
+
 const { fetchAll, update } = require("~/common/kinvey-service");
 const { showAlert } = require("~/common/utility-service");
 
@@ -32,15 +33,12 @@ function _toFormattedObject(item) {
     return fromObject({
         id: item._id,
         name: item.name,
-        when: toDate(item.when),
         submittedOn: fromNow(item.submittedOn),
         from: fromObject(item.from),
-        priority: item.productivityImpact,
-        description: item.description,
-        data: new ObservableArray([
-            fromObject({ key: 'Location', value: item.location }),
-            fromObject({ key: 'Productivity Impact', value: item.productivityImpact })
-        ])
+        fromDate: item.fromDate,
+        toDate: item.toDate,
+        when: toRange(item.fromDate, item.toDate),
+        comments: item.comments
     });
 }
 
@@ -81,13 +79,13 @@ function _updateUiAndRemoveItem(item, status) {
         let view = source.currentView.getViewById(item.id);
         view.removeChildren();
         let cancelEvent = new EventAccept();
-        cancelEvent.text = "Request Accepted";
+        cancelEvent.text = "Timeoff Accepted";
         view.addChild(cancelEvent);
     } else {
         let view = source.currentView.getViewById(item.id);
         view.removeChildren();
         let cancelEvent = new EventCancel();
-        cancelEvent.text = "Request Cancelled";
+        cancelEvent.text = "Timeoff Cancelled";
         view.addChild(cancelEvent);
     }
 
@@ -126,23 +124,6 @@ function _onCancelTapped(args) {
     }
 }
 
-function changeVisibility(visibility) {
-    if (visibility == 'collapse')
-        return 'visible';
-
-    return 'collapse';
-}
-
-function _onMoreTapped(args) {
-    let viewId = args.object.viewId;
-    let page = source.currentView;
-    let view = page.getViewById(viewId);
-    if (view) {
-        let newVisibility = changeVisibility(view.visibility);
-        view.visibility = newVisibility;
-    }
-}
-
 function _checkEventDataAvailability() {
     let hasData = source.items.length > 0;
     if (!hasData) {
@@ -170,7 +151,7 @@ let source = fromObject({
         _onCancelTapped(args);
     },
     onMoreTapped: (args) => {
-        _onMoreTapped(args);
+        // Do nothing
     },
     loaded: (args) => {
         _loaded(args);

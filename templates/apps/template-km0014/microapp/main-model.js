@@ -14,14 +14,16 @@ function _loaded(args) {
 
 function _onSubmitTapped(args) {
     const data = {
-        name: source.selectedVacationType,
-        fromDate: source.fromDate, toDate: source.toDate,
+        name: 'Machine Request',
         submittedOn: new Date().toISOString(),
         from: {
-            name: 'Sandra Young',
-            avatar: '~/images/profiles/sandra.png',
+            name: 'Paul Hoffman',
+            avatar: '~/images/profiles/paul.png',
         },
-        comments: source.comments, status: 'New'
+        description: source.description,
+        location: source.selectedLocation,
+        productivityImpact: source.selectedImpact,
+        status: 'New'
     };
 
     create(appJson.collectionName, data)
@@ -49,12 +51,12 @@ function updateUi() {
 // The binding
 let source = fromObject({
     name: appJson.name,
-    vacationTypes: ["Vacation", "Sick Leave", "Paid Leave", "Special Leave"],
-    selectedVacationType: "Vacation",
     date: new Date(),
-    fromDate: undefined,
-    toDate: undefined,
-    comments: undefined,
+    description: undefined,
+    selectedLocation: "-- Choose One --",
+    locationTypes: ["Bedford", "Morrisville", "Hyderabad", "Other"],
+    selectedImpact: "-- Choose One --",
+    impactTypes: ["Low", "Medium", "High"],
     formVisibility: "visible",
     statusVisibility: "collapse",
     currentView: undefined,

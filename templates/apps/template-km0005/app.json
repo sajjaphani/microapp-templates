@@ -1,30 +1,30 @@
 {
-    "id": "template-km0005",
-    "name": "Incident & Service",
-    "description": "Incident & Service microapp.",
-    "requireCollection": true,
-    "collectionName": "collection-incident-service'",
-    "icon": "0xf26c",
-    "hasCardUi": true,
-    "hasMicroappUi": true,
-    "hasTestData": true,
-    "summary": "This microapp contains a feed item for showing incident events to the corresponding user and has an app UI for creating incidents. This microapp can be customized to integrate into a system such as Salesforce. This template also contains sample data, and can be customzed based on the data that needs to shown as an event.",
-    "files": {
-        "card": [
-            "templates/apps/template-km0005/card/index.js",
-            "templates/apps/template-km0005/card/main-model.js",
-            "templates/apps/template-km0005/card/main.css",
-            "templates/apps/template-km0005/card/main.js",
-            "templates/apps/template-km0005/card/main.xml",
-            "templates/apps/template-km0005/card/sample-data.json"
-        ],
-        "microapp": [
-            "templates/apps/template-km0005/microapp/index.js",
-            "templates/apps/template-km0005/microapp/main-model.js",
-            "templates/apps/template-km0005/microapp/main.css",
-            "templates/apps/template-km0005/microapp/main.js",
-            "templates/apps/template-km0005/microapp/main.xml"
-        ]
-    },
-    "version": "1.0.0"
+	"id": "template-km0005",
+	"name": "My Expenses",
+	"description": "Summit corporate expenses.",
+	"requireCollection": true,
+	"collectionName": "collection-my-expenses",
+	"icon": "0xf0d6",
+	"hasCardUi": true,
+	"hasMicroappUi": true,
+	"hasTestData": true,
+	"summary": "This microapp contains a feed item for showing submitted expenses as events for approval and also has an app UI for submitting expenses. This microapp can be customized to integrate with any Expense management systems such as Concur/Workday. This template also contains sample data, and can be customzed based on the data that needs to shown as an event.",
+	"files": {
+		"card": [
+			"templates/apps/template-km0005/card/index.js",
+			"templates/apps/template-km0005/card/main-model.js",
+			"templates/apps/template-km0005/card/main.css",
+			"templates/apps/template-km0005/card/main.js",
+			"templates/apps/template-km0005/card/main.xml",
+			"templates/apps/template-km0005/card/sample-data.json"
+		],
+		"microapp": [
+			"templates/apps/template-km0005/microapp/index.js",
+			"templates/apps/template-km0005/microapp/main-model.js",
+			"templates/apps/template-km0005/microapp/main.css",
+			"templates/apps/template-km0005/microapp/main.js",
+			"templates/apps/template-km0005/microapp/main.xml"
+		]
+	},
+	"version": "1.0.0"
 }
