@@ -78,8 +78,8 @@
     "custom-templates": {
         "cards": [
             {
-                "id": "template-kmtc06",
-                "path": "templates/custom/cards/template-kmtc06",
+                "id": "template-kmtc01",
+                "path": "templates/custom/cards/template-kmtc01",
                 "name": "None",
                 "description": "No Notifications",
                 "icon": "",
@@ -88,8 +88,8 @@
                 "previewSelectedImage": "assets/template-imgs/cards/no-notification-selected.png"
             },
             {
-                "id": "template-kmtc05",
-                "path": "templates/custom/cards/template-kmtc05",
+                "id": "template-kmtc02",
+                "path": "templates/custom/cards/template-kmtc02",
                 "name": "Blank",
                 "description": "Build card of your own.",
                 "icon": "",
