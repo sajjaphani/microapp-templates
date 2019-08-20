@@ -5,13 +5,6 @@
     "icon": "",
     "hasMicroappUi": true,
     "hasTestData": false,
-    "fields": [
-        {
-            "name": "botId",
-            "displayName": "Bot Id",
-            "mandatory": true
-        }
-    ],
     "summary": "This custom microapp UI template provides a bare skeleton and can be used to design any kind of UI. For example, a form can be designed on top of this.",
     "files": [
         "templates/custom/microapps/template-kmtm02/files/index.js",
