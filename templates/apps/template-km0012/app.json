@@ -1,0 +1,30 @@
+{
+  "id": "template-km0012",
+  "name": "Guest Pass",
+  "description": "Microapp to generate Guest Pass",
+  "requireCollection": true,
+  "collectionName": "collection-guest-pass",
+  "icon": "0xf145",
+  "hasCardUi": true,
+  "hasMicroappUi": true,
+  "hasTestData": true,
+  "summary": "This microapp can be used to generate the guest pass for the visitors. This template also contains sample data, and can be customised based on the data that needs to shown as food items.",
+  "files": {
+      "card": [
+          "templates/apps/template-km0012/card/index.js",
+          "templates/apps/template-km0012/card/main-model.js",
+          "templates/apps/template-km0012/card/main.css",
+          "templates/apps/template-km0012/card/main.js",
+          "templates/apps/template-km0012/card/main.xml",
+          "templates/apps/template-km0012/card/sample-data.json"
+      ],
+      "microapp": [
+          "templates/apps/template-km0012/microapp/index.js",
+          "templates/apps/template-km0012/microapp/main-model.js",
+          "templates/apps/template-km0012/microapp/main.css",
+          "templates/apps/template-km0012/microapp/main.js",
+          "templates/apps/template-km0012/microapp/main.xml"
+      ]
+  },
+  "version": "1.0.0"
+}

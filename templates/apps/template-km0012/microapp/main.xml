@@ -1,0 +1,140 @@
+<GridLayout rows="*" loaded="{{ loaded }}" xmlns:components="components">
+    <GridLayout row="0" rows="*, auto" visibility="{{ formVisibility }}">
+        <ScrollView row="0">
+            <StackLayout row="0" margin="20">
+                <GridLayout rows="auto">
+                    <Image row="0" src="{{ userImage }}" horizontalAlignment="center" verticalAlignment="center"
+                        stretch="aspectFit" class="pass-image"></Image>
+                    <AbsoluteLayout row="0">
+                        <GridLayout top="85" left="180" class="pass-capture-outer" tap="{{ onCaptureImageTapped }}">
+                            <GridLayout class="pass-capture-inner">
+                                <Label horizontalAlignment="center" verticalAlignment="center" text="&#xf030;"
+                                    class="fa pass-capture-icon"></Label>
+                            </GridLayout>
+                        </GridLayout>
+                    </AbsoluteLayout>
+                </GridLayout>
+                <StackLayout class="m-t-15">
+                    <Label text="Full Name" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-8">
+                        <components:TextField text="{{ fullName }}" hint="Full Name"></components:TextField>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-15">
+                    <Label text="Company / Organisation" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-8">
+                        <components:TextField text="{{ orgName }}" hint="Organisation Name"></components:TextField>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-10">
+                    <Label text="Select Facility Visiting" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-5">
+                        <components:ListPicker title="Select Facility" items="{{ facilityTypes }}"
+                            selectedItem="{{ selectedFacility }}">
+                        </components:ListPicker>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-15">
+                    <Label text="Contact No." class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-8">
+                        <components:TextField text="{{ contactNo }}" hint="+1-XXX-XXX-XXXX"></components:TextField>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-15">
+                    <Label text="Email Address" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-8">
+                        <components:TextField text="{{ email }}" hint="user@examples.com"></components:TextField>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-10">
+                    <Label text="Valid From" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-5">
+                        <components:DatePicker title="" selectedDate="{{ fromDate }}" minDate="{{ date }}">
+                        </components:DatePicker>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout class="m-t-10">
+                    <Label text="Valid Upto" class="eloha-font-semibold form-field-label"></Label>
+                    <StackLayout class="m-t-5">
+                        <components:DatePicker title="" selectedDate="{{ toDate }}" minDate="{{ date }}">
+                        </components:DatePicker>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        <GridLayout rows="*" row="1" verticalAlignment="bottom" style="height:80; background-color: #E7EDF5">
+            <Button isEnabled="{{ isCreateEnabled() }}" class="eloha-font-semibold form-button-submit"
+                tap="{{ onCreateTapped }}" text="Create"></Button>
+        </GridLayout>
+    </GridLayout>
+    <StackLayout visibility="{{ passVisibility }}" class="guestpass-container">
+        <GridLayout class="m-15 guestpass-component">
+            <GridLayout rows="*, auto">
+                <GridLayout row="0" rows="auto, *" id="guestpass-view">
+                    <GridLayout row="0" columns="*, *" class="p-20 pass-header-container">
+                        <Label col="0" verticalAlignment="center" text="Guest Pass"
+                            class="eloha-font-regular pass-header-label"></Label>
+                        <Image col="1" verticalAlignment="center" horizontalAlignment="right" width="120" height="25"
+                            src="{{ authorityLogo }}"></Image>
+                    </GridLayout>
+                    <StackLayout row="1" class="p-20 pass-data-container">
+                        <GridLayout rows="auto" columns="*, *">
+                            <Image col="0" src="{{ userImage }}" width="110" height="110" horizontalAlignment="left"
+                                verticalAlignment="center" class="pass-image" stretch="aspectFill"></Image>
+                            <StackLayout col="1">
+                                <Image src="{{ authorityBarcode }}" width="110" height="55" horizontalAlignment="center"
+                                    verticalAlignment="center" stretch="aspectFit"></Image>
+                                <Image class="m-t-20" src="{{ authoritySign }}" height="38" horizontalAlignment="center"
+                                    verticalAlignment="center" stretch="aspectFit"></Image>
+                                <Label text="Issued by: (#106945)" class="eloha-font-regular pass-data-label"></Label>
+                            </StackLayout>
+                        </GridLayout>
+                        <StackLayout style="margin-top: 18">
+                            <Label text="{{ fullName }}" class="eloha-font-bold pass-data-value"></Label>
+                            <Label text="{{ orgName }}" class="eloha-font-regular m-t-3 pass-data-value"
+                                style="font-size: 16"></Label>
+                        </StackLayout>
+                        <StackLayout style="margin-top: 18">
+                            <Label text="Visiting Facility" class="eloha-font-bold pass-data-label"></Label>
+                            <Label text="{{ selectedFacility }}"
+                                class="eloha-font-regular m-t-3 pass-data-value"></Label>
+                        </StackLayout>
+                        <StackLayout style="margin-top: 18">
+                            <Label text="Visiting Schedule" class="eloha-font-bold pass-data-label"></Label>
+                            <Label text="{{ passValidity }}" class="eloha-font-regular m-t-3 pass-data-value"></Label>
+                        </StackLayout>
+                        <StackLayout style="margin-top: 18">
+                            <Label text="Email" class="eloha-font-bold pass-data-label"></Label>
+                            <Label text="{{ email }}" class="eloha-font-regular m-t-3 pass-data-value"></Label>
+                        </StackLayout>
+                        <StackLayout style="margin-top: 18">
+                            <Label text="Contact #" class="eloha-font-bold pass-data-label"></Label>
+                            <Label text="{{ contactNo }}" class="eloha-font-regular m-t-3 pass-data-value"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </GridLayout>
+                <GridLayout row="1" columns="*, *" class="pass-actions">
+                    <StackLayout col="0" class="p-10" tap="{{ onDiscardTapped }}">
+                        <Label text="&#xf014;" class="fa pass-action-icon" horizontalAlignment="center"
+                            verticalAlignment="center"></Label>
+                        <Label class="eloha-font-regular pass-action-label m-t-5" text="Discard"
+                            horizontalAlignment="center" verticalAlignment="center"></Label>
+                    </StackLayout>
+                    <StackLayout col="1" class="pass-actions-second p-10" tap="{{ onSendTapped }}">
+                        <Label text="&#xf003;" class="fa pass-action-icon" horizontalAlignment="center"
+                            verticalAlignment="center"></Label>
+                        <Label class="eloha-font-regular pass-action-label m-t-5" text="Send"
+                            horizontalAlignment="center" verticalAlignment="center"></Label>
+                    </StackLayout>
+                </GridLayout>
+            </GridLayout>
+            <GridLayout visibility="{{ sendingMailVisibility }}" row="0" rows="*" class="guestpass-container">
+                <StackLayout row="0" horizontalAlignment="center" verticalAlignment="center">
+                    <ActivityIndicator horizontalAlignment="center" verticalAlignment="center" style="color: #FFFFFF" row="0" busy="true"></ActivityIndicator>
+                    <Label horizontalAlignment="center" verticalAlignment="center" class="eloha-font-bold" row="1" style="color: #FFFFFF; z-index:20"
+                        text="Please wait..."></Label>
+                </StackLayout>
+            </GridLayout>
+        </GridLayout>
+    </StackLayout>
+</GridLayout>

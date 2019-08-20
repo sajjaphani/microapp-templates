@@ -1,5 +1,5 @@
 const ObservableArray = require("~/common/modules/data/observable-array").ObservableArray;
-const fromObject = require("~/common/modules/data/observable").fromObject;
+const fromObject = require("../../template-km0006/microapp/node_modules/~/common/modules/data/observable").fromObject;
 
 const { EventAccept, EventCancel } = require("~/cards");
 

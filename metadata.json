@@ -35,6 +35,14 @@
             "author": "Progress Software"
         },
         {
+            "id": "template-km0012",
+            "path": "templates/apps/template-km0012",
+            "name": "Guest Pass",
+            "description": "Microapp to generate Guest Pass",
+            "icon": "0xf145",
+            "author": "Progress Software"
+        },
+        {
             "id": "template-km0013",
             "path": "templates/apps/template-km0013",
             "name": "My Pay",
