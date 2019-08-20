@@ -25,9 +25,11 @@
                                 </StackLayout>
                                 <StackLayout col="1" orientation="horizontal" horizontalAlignment="right">
                                     <cards:EventAction class="eloha-action eloha-action-secondary m-r-10"
-                                        faIcon="&#xf00d;" id="{{ id }}" tap="{{ $parents['Repeater'].onCancelTapped }}"></cards:EventAction>
+                                        faIcon="&#xf00d;" id="{{ id }}" tap="{{ $parents['Repeater'].onCancelTapped }}">
+                                    </cards:EventAction>
                                     <cards:EventAction class="eloha-action eloha-action-primary m-r-10"
-                                        faIcon="&#xf019;" id="{{ id }}" tap="{{ $parents['Repeater'].onDownloadTapped }}">
+                                        faIcon="&#xf019;" id="{{ id }}"
+                                        tap="{{ $parents['Repeater'].onDownloadTapped }}">
                                     </cards:EventAction>
                                 </StackLayout>
                             </GridLayout>

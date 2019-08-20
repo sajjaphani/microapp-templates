@@ -1,0 +1,6 @@
+<GridLayout rows="*" loaded="{{ loaded }}" unloaded="{{ unloaded }}">
+    <GridLayout row="0">
+        <Label text="Add your App UI components here..." class="eloha-desc" verticalAlignment="center"
+            horizontalAlignment="center"></Label>
+    </GridLayout>
+</GridLayout>

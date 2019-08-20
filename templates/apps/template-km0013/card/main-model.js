@@ -1,29 +1,22 @@
 const ObservableArray = require("~/common/modules/data/observable-array").ObservableArray;
 const fromObject = require("~/common/modules/data/observable").fromObject;
 
-const { EventAccept, EventCancel } = require("~/cards");
+const StackLayout = require("~/common/modules/ui/layouts/stack-layout").StackLayout;
+const Image = require("~/common/modules/ui/image").Image;
 
-const { PullToRefresh } = require("~/common/subscriptions");
+const { EventCancel } = require("~/cards");
+
 const { fromNow, toDate } = require("~/common/transformations");
-const { fetchAll, update } = require("~/common/kinvey-service");
-const { showAlert } = require("~/common/utility-service");
+
+const { fetchAll } = require("~/common/kinvey-service");
 
 const appJson = require("../app.json");
-const _ACCEPT_STATE = 'Accept';
-const _CANCEL_STATE = 'Cancel';
 
 function _loaded(args) {
-    if (!source.pullToRefresh) {
-        source.pullToRefresh = PullToRefresh.subscribe(() => {
-            _fetchAndUpdateData(args);
-        });
-    }
-
     if (source.initialized && source.currentView)
         return;
 
     _fetchAndUpdateData(args);
-    source.name = appJson.name;
     source.currentView = args.object;
     source.initialized = true;
 }
@@ -35,12 +28,8 @@ function _toFormattedObject(item) {
         when: toDate(item.when),
         submittedOn: fromNow(item.submittedOn),
         from: fromObject(item.from),
-        priority: item.productivityImpact,
-        description: item.description,
-        data: new ObservableArray([
-            fromObject({ key: 'Location', value: item.location }),
-            fromObject({ key: 'Productivity Impact', value: item.productivityImpact })
-        ])
+        comments: item.comments,
+        payslipImageUrl: item.payslipImageUrl
     });
 }
 
@@ -71,25 +60,17 @@ function _fetchAndUpdateData(args) {
     }
 }
 
-function _unloaded(args) {
-    source.pullToRefresh && source.pullToRefresh.unsubscribe();
-    source.pullToRefresh = undefined;
+function _onDownloadTapped(args) {
+    console.log('Handle download yourself...')
 }
 
-function _updateUiAndRemoveItem(item, status) {
-    if (status == _ACCEPT_STATE) {
-        let view = source.currentView.getViewById(item.id);
-        view.removeChildren();
-        let cancelEvent = new EventAccept();
-        cancelEvent.text = "Request Accepted";
-        view.addChild(cancelEvent);
-    } else {
-        let view = source.currentView.getViewById(item.id);
-        view.removeChildren();
-        let cancelEvent = new EventCancel();
-        cancelEvent.text = "Request Cancelled";
-        view.addChild(cancelEvent);
-    }
+function _onCancelTapped(args) {
+    let item = args.object.bindingContext;
+    let view = source.currentView.getViewById(item.id);
+    view.removeChildren();
+    let cancelEvent = new EventCancel();
+    cancelEvent.text = "Payslip Dismissed";
+    view.addChild(cancelEvent);
 
     setTimeout(() => {
         let _index = source.items.indexOf(item);
@@ -98,49 +79,29 @@ function _updateUiAndRemoveItem(item, status) {
     }, 1000);
 }
 
-function _updateRecord(item, updates, status) {
-    update(appJson.collectionName, item.id, updates)
-        .subscribe(
-            data => { data ? _updateUiAndRemoveItem(item, status) : showAlert("Problem in Performing Action", "There is some problem in performing the action.") },
-            error => { showAlert("Problem in Performing Action", error.message) },
-            () => { });
-}
-
-function _onAcceptTapped(args) {
-    let item = args.object.bindingContext;
-    if (appJson.useTestData) {
-        _updateUiAndRemoveItem(item, _ACCEPT_STATE);
-    } else {
-        let updates = { status: _ACCEPT_STATE };
-        _updateRecord(item, updates, _ACCEPT_STATE);
-    }
-}
-
-function _onCancelTapped(args) {
-    let item = args.object.bindingContext;
-    if (appJson.useTestData) {
-        _updateUiAndRemoveItem(item, _CANCEL_STATE);
-    } else {
-        let updates = { status: _CANCEL_STATE };
-        _updateRecord(item, updates, _CANCEL_STATE);
-    }
-}
-
-function changeVisibility(visibility) {
-    if (visibility == 'collapse')
-        return 'visible';
-
-    return 'collapse';
-}
-
 function _onMoreTapped(args) {
-    let viewId = args.object.viewId;
-    let page = source.currentView;
-    let view = page.getViewById(viewId);
-    if (view) {
-        let newVisibility = changeVisibility(view.visibility);
-        view.visibility = newVisibility;
-    }
+    const mainView = args.object;
+    let itemId = args.object.id;
+    let itemIndex = source.items.map(function (item) { return item.id; }).indexOf(itemId);
+    let item = source.items.getItem(itemIndex);
+
+    let image = new Image();
+    image.src = item.payslipImageUrl;
+    image.stretch = 'aspectFill'
+
+    let modelContent = new StackLayout();
+    modelContent.cssClasses.add("m-10");
+    modelContent.addChild(image);
+
+    const context = { view: modelContent };
+
+    setTimeout(() => {
+        const modalViewModule = "modal/modal-view";
+        const fullscreen = true;
+        mainView.showModal(modalViewModule, context, () => {
+            // console.log('modal closed');
+        }, fullscreen);
+    }, 100);
 }
 
 function _checkEventDataAvailability() {
@@ -162,9 +123,8 @@ let source = fromObject({
     items: new ObservableArray(),
     currentView: undefined,
     initialized: false,
-    pullToRefresh: undefined,
-    onAcceptTapped: (args) => {
-        _onAcceptTapped(args)
+    onDownloadTapped: (args) => {
+        _onDownloadTapped(args)
     },
     onCancelTapped: (args) => {
         _onCancelTapped(args);
@@ -176,7 +136,7 @@ let source = fromObject({
         _loaded(args);
     },
     unloaded: (args) => {
-        _unloaded(args);
+        // Do nothing
     },
 });
 

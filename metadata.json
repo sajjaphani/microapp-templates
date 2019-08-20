@@ -3,6 +3,14 @@
     "description": "Metadata for Kinvey Microapps templates",
     "microapps": [
         {
+            "id": "template-km0003",
+            "path": "templates/apps/template-km0003",
+            "name": "Corporate Events",
+            "description": "Corporate Events template.",
+            "icon": "0xf072",
+            "author": "Progress Software"
+        },
+        {
             "id": "template-km0004",
             "path": "templates/apps/template-km0004",
             "name": "My Timeoff",

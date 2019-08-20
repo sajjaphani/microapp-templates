@@ -1,0 +1,43 @@
+[
+    {
+        "_id": "cc-id1",
+        "name": "Updates",
+        "when": "2018-10-25T18:30:00.000Z",
+        "submittedOn": "2018-10-25T18:30:00.000Z",
+        "from": {
+            "name": "Human Capital",
+            "avatar": "~/images/profiles/progress.png"
+        },
+        "to": "All Employees",
+        "attachment": {},
+        "title": "Q1 Organization Updates",
+        "summary": "San Fransico, CA.--(NEWS WIRE)--Mar. 28, 2018-- Eloha (NYSE: ELHA), the leading provider of application development and deployment technologies, today announced results for its fiscal first quarter ended February 28, 2018.",
+        "contents": [
+            "San Fransico, CA.--(NEWS WIRE)--Mar. 28, 2018-- Eloha (NYSE: ELHA), the leading provider of application development and deployment technologies, today announced results for its fiscal first quarter ended February 28, 2018.",
+            "Revenue was $120.0 million during the quarter compared to $100.0 million in the same quarter last year, a year-over-year increase of 20% on an actual currency basis, and flat on a constant currency basis. On a non-GAAP basis, revenue was $120.2 million during the quarter compared to $100.2 million in the same quarter last year, an increase of 20% on an actual currency basis, and flat on a constant currency basis.",
+            "On a GAAP basis, diluted earnings per share was $0.27 compared to a diluted loss per share of $0.01 in the same quarter last year. On a non-GAAP basis, diluted earnings per share was $0.54 compared to $0.34 in the same quarter last year, growth of 59%.",
+            "\"We are very pleased with our strong start to 2018,\" said Jhon Doe, CEO at Eloha. \"We exceeded both our revenue and earnings per share expectations in the first quarter, and the strength of our business has enabled us to increase our full year guidance for both operating margin and earnings per share. Our business is strong and stable, and we remain confident in our future prospects.\""
+        ]
+    },
+    {
+        "_id": "cc-id2",
+        "name": "Blog",
+        "when": "2018-10-25T18:30:00.000Z",
+        "submittedOn": "2018-10-25T18:30:00.000Z",
+        "from": {
+            "name": "CEO Blog",
+            "avatar": "~/images/profiles/progress.png"
+        },
+        "to": "All Employees",
+        "attachment": {},
+        "title": "The 100% Rule",
+        "summary": "The 100% Rule\n\nPeople often ask me my secret of success, I would always tell about \"The 100% Rule\".",
+        "contents": [
+            "People often ask me my secret of success, I would always tell about \"The 100% Rule\".",
+            "Throughout my career, I have worked in a variety of different roles, from an intern in a startup where I was paid $5 per hour to CEO of a multi-billion dollar company. In all these years and all these roles, I always followed one simple principle that helped me succeed - \"The 100% Rule\".",
+            "When I joined my first job as an intern I resolved to put my 100% effort into whatever I did, it worked wonders throughout my life. By giving your 100% you will be putting your best effort, if you start putting your best effort into whatever you do, you would start producing great results.",
+            "On a final note if you start giving your 100% in whatever you do, only two things can happen:\n\n\t1) You Succeed\n\t2) You come out as a wise person",
+            "So start giving your best and see magic happen."
+        ]
+    }
+]

@@ -1,0 +1,30 @@
+{
+    "id": "template-km0003",
+    "name": "Corporate Events",
+    "description": "Corporate events template.",
+    "requireCollection": true,
+    "collectionName": "collection-corp-events",
+    "icon": "0xf003",
+    "hasCardUi": true,
+    "hasMicroappUi": false,
+    "hasTestData": true,
+    "summary": "Sending updates to the employees in a timely manner is an important aspect. This card template can be used to send the organization wide events to a broad range of employees. This template also contains sample data, and can be customzed based on the data that needs to shown as an event.",
+    "files": {
+        "card": [
+            "templates/apps/template-km0003/card/index.js",
+            "templates/apps/template-km0003/card/main-model.js",
+            "templates/apps/template-km0003/card/main.css",
+            "templates/apps/template-km0003/card/main.js",
+            "templates/apps/template-km0003/card/main.xml",
+            "templates/apps/template-km0003/card/sample-data.json"
+        ],
+        "microapp": [
+            "templates/apps/template-km0003/microapp/index.js",
+            "templates/apps/template-km0003/microapp/main-model.js",
+            "templates/apps/template-km0003/microapp/main.css",
+            "templates/apps/template-km0003/microapp/main.js",
+            "templates/apps/template-km0003/microapp/main.xml"
+        ]
+    },
+    "version": "1.0.0"
+}

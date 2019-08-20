@@ -1,0 +1,48 @@
+<GridLayout rows="auto, auto" class="card" loaded="{{ loaded }}" unloaded="{{ unloaded }}" xmlns:cards="cards">
+    <!-- Card Header-->
+    <cards:CardHeader row="0" name="{{ name }}"></cards:CardHeader>
+    <!-- Visible where there is an event/data... -->
+    <GridLayout row="1" visibility="{{ notificationsVisibility }}" class="card-feed-content">
+        <!-- Event Content -->
+        <Repeater items="{{ items }}">
+            <Repeater.itemTemplate>
+                <StackLayout class="card-feed-item-top" id="{{ id }}">
+                    <!-- Event Header -->
+                    <cards:EventHeader fromName="{{ from.name }}" fromAvatar="{{ from.avatar }}"
+                        submittedOn="{{ submittedOn }}" eventName="{{ name }}" eventIcon="&#xf0f2;"
+                        eventInfo="{{ to }}"></cards:EventHeader>
+                    <!-- Event Content with Actions -->
+                    <GridLayout rows="*, *" class="p-b-15">
+                        <GridLayout row="0" verticalAlignment="top">
+                            <StackLayout class="m-l-10 m-r-10">
+                                <Label text="{{ summary }}" textWrap="true"
+                                    class="eloha-font-regular event-summary m-t-10 m-b-10"></Label>
+                                <Image visibility="{{ image ? 'visible' : 'collapse' }}" stretch="aspectFill"
+                                    src="{{ image }}" height="200"></Image>
+                            </StackLayout>
+                        </GridLayout>
+                        <!-- Event Actions -->
+                        <GridLayout row="1" rows="*" columns="*, auto" class="p-t-10">
+                            <StackLayout col="0" orientation="horizontal">
+                                <cards:EventAction class="eloha-action-more" faIcon="&#xf141;" itemId="{{ id }}"
+                                    viewId="{{  'more-details-' + id }}" verticalAlignment="bottom"
+                                    tap="{{ $parents['Repeater'].onMoreTapped }}">
+                                </cards:EventAction>
+                            </StackLayout>
+                            <StackLayout col="1" orientation="horizontal" horizontalAlignment="right">
+                                <cards:EventAction class="eloha-action eloha-action-secondary m-r-10" faIcon="&#xf00d;"
+                                    itemId="{{ id }}" tap="{{ $parents['Repeater'].onCancelTapped }}">
+                                </cards:EventAction>
+                            </StackLayout>
+                        </GridLayout>
+                    </GridLayout>
+                </StackLayout>
+            </Repeater.itemTemplate>
+        </Repeater>
+    </GridLayout>
+    <!-- Else part -->
+    <!-- Visible where there is no event/data or an action is takle place... -->
+    <StackLayout row="1" visibility="{{ noNotificationsVisibility }}" class="card-feed-item-top">
+        <cards:NoCardEvent></cards:NoCardEvent>
+    </StackLayout>
+</GridLayout>
