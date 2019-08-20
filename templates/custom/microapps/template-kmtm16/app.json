@@ -3,6 +3,7 @@
     "description": "Capture Signature template",
     "requireCollection": false,
     "icon": "",
+    "hasMicroappUi": true,
     "hasTestData": false,
     "summary": "This microapp UI template has been tailored to capture a user signature on a device.",
     "files": [

@@ -3,6 +3,7 @@
     "description": "Barcode Scanner template",
     "requireCollection": false,
     "icon": "",
+    "hasMicroappUi": true,
     "hasTestData": false,
     "summary": "This microapp UI template is tailered to scan any Barcode. It can scan different formats including EAN-8, EAN-13, Code 128, QR Code, Data Matrix and Aztec.",
     "files": [

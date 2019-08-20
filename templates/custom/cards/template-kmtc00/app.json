@@ -4,6 +4,7 @@
     "requireCollection": false,
     "icon": "",
     "hasTestData": false,
+    "hasCardUi": true,
     "fields": [
         {
             "name": "botId",

@@ -3,6 +3,7 @@
     "description": "Blank App UI template",
     "requireCollection": false,
     "icon": "",
+	"hasMicroappUi": true,
     "hasTestData": false,
     "summary": "You can choose this option if are building microapp UI from scratch. This is an empty template and you can customize based on your needs.",
     "files": [

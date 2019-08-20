@@ -3,6 +3,7 @@
     "description": "",
     "requireCollection": false,
     "icon": "",
+	"hasMicroappUi": true,
     "hasTestData": false,
     "fields": [
         {

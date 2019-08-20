@@ -3,6 +3,7 @@
     "description": "Sample Form template.",
     "requireCollection": true,
     "icon": "",
+    "hasMicroappUi": true,
     "hasTestData": false,
     "fields": [
         {

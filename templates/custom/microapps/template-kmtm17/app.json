@@ -3,6 +3,7 @@
     "description": "Website template",
     "requireCollection": false,
     "icon": "",
+    "hasMicroappUi": true,
     "hasTestData": false,
     "fields": [
         {

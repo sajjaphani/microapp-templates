@@ -3,6 +3,7 @@
     "description": "The app template may not contribute a card.",
     "requireCollection": false,
     "icon": "",
+    "hasCardUi": false,
     "hasTestData": false,
     "summary": "You can choose this option if your microapp does not have card specific events. This template is not meant to be rendered on the device.",
     "files": [

@@ -3,6 +3,7 @@
     "description": "Build card of your own.",
     "requireCollection": false,
     "icon": "",
+    "hasCardUi": true,
     "hasTestData": false,
     "summary": "This custom card UI template can be used to design any kind notification events. For example, it can be used show a barchart/pie chart. Just add the necessary UI elements and bind accordingly.",
     "files": [

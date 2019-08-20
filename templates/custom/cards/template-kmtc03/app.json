@@ -3,6 +3,7 @@
     "description": "Accept/Reject card template.",
     "requireCollection": true,
     "icon": "",
+    "hasCardUi": true,
     "hasTestData": true,
     "summary": "This card template can be used where a quick action such as accept/reject can be taken quickly based on the event. This template also contains sample data, and can be customzed based on the data that needs to shown as an event.",
     "files": [
