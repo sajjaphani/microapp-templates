@@ -1,0 +1,15 @@
+{
+    "name": "Capture Signature",
+    "description": "Capture Signature template",
+    "requireCollection": false,
+    "icon": "",
+    "hasTestData": false,
+    "summary": "This microapp UI template has been tailored to capture a user signature on a device.",
+    "files": [
+        "templates/custom/microapps/template-kmtm16/files/index.js",
+        "templates/custom/microapps/template-kmtm16/files/main-model.js",
+        "templates/custom/microapps/template-kmtm16/files/main.css",
+        "templates/custom/microapps/template-kmtm16/files/main.js",
+        "templates/custom/microapps/template-kmtm16/files/main.xml"
+    ]
+}

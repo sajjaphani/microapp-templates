@@ -129,59 +129,53 @@
         "microapps": [
             {
                 "id": "template-kmtm01",
-                "path": "templates/custom/microapps/template-kmtm02",
-                "name": "Master / Details",
-                "description": "Master / Details",
+                "path": "templates/custom/microapps/template-kmtm01",
+                "name": "Blank",
+                "description": "Blank Microapp",
                 "icon": "",
-                "author": ""
+                "author": "",
+                "previewImage": "assets/template-imgs/appui/blank.png",
+                "previewSelectedImage": "assets/template-imgs/appui/blank-selected.png"
             },
             {
                 "id": "template-kmtm02",
                 "path": "templates/custom/microapps/template-kmtm02",
                 "name": "Sample Form",
-                "description": "Sample Form",
+                "description": "Sample Form for App UI",
                 "icon": "",
-                "author": ""
+                "author": "",
+                "previewImage": "assets/template-imgs/appui/form.png",
+                "previewSelectedImage": "assets/template-imgs/appui/form-selected.png"
             },
             {
-                "id": "template-kmtm03",
-                "path": "templates/custom/microapps/template-kmtm03",
+                "id": "template-kmtm15",
+                "path": "templates/custom/microapps/template-kmtm15",
                 "name": "Barcode Scanner",
                 "description": "Barcode Scanner",
                 "icon": "",
-                "author": ""
+                "author": "",
+                "previewImage": "assets/template-imgs/appui/barcode-scanner.png",
+                "previewSelectedImage": "assets/template-imgs/appui/barcode-scanner-selected.png"
             },
             {
-                "id": "template-kmtm04",
-                "path": "templates/custom/microapps/template-kmtm04",
+                "id": "template-kmtm16",
+                "path": "templates/custom/microapps/template-kmtm16",
                 "name": "Capture Signature",
                 "description": "Capture Signature",
                 "icon": "",
-                "author": ""
+                "author": "",
+                "previewImage": "assets/template-imgs/appui/capture-sign.png",
+                "previewSelectedImage": "assets/template-imgs/appui/capture-sign-selected.png"
             },
             {
-                "id": "template-kmtm05",
-                "path": "templates/custom/microapps/template-kmtm05",
+                "id": "template-kmtm17",
+                "path": "templates/custom/microapps/template-kmtm17",
                 "name": "Website",
                 "description": "Website",
                 "icon": "",
-                "author": ""
-            },
-            {
-                "id": "template-kmtm06",
-                "path": "templates/custom/microapps/template-kmtm06",
-                "name": "Custom Microapp UI",
-                "description": "Custom Microapp UI",
-                "icon": "",
-                "author": ""
-            },
-            {
-                "id": "template-kmtm07",
-                "path": "templates/custom/microapps/template-kmtm06",
-                "name": "Blank / None",
-                "description": "Blank / None",
-                "icon": "",
-                "author": ""
+                "author": "",
+                "previewImage": "assets/template-imgs/appui/website.png",
+                "previewSelectedImage": "assets/template-imgs/appui/website-selected.png"
             }
         ]
     }
