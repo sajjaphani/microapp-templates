@@ -1,0 +1,44 @@
+[
+    {
+        "_id": "food-item-id1",
+        "name": "Greek Salad",
+        "desc": "Traditional Greek salad is served with all of the vegetables and feta on a fresh bed of lettuce with the potato salad at the bottom.",
+        "price": 7.79,
+        "imageSrc": "https://storage.googleapis.com/1260b1c390e14f6bae3d391c74665860/f5e5fc49-da82-43ad-8f8a-38a2030443ad/food-greek-salad.png"
+    },
+    {
+        "_id": "food-item-id2",
+        "name": "Noodle Soup",
+        "desc": "Pour in chicken and vegetable broths and stir in chicken, noodles, carrots, basil, oregano, salt and pepper.",
+        "price": 5.99,
+        "imageSrc": "https://storage.googleapis.com/1260b1c390e14f6bae3d391c74665860/5bee97f9-dae8-4a8b-832e-cd461411f09c/food-noodle-soup.png"
+    },
+    {
+        "_id": "food-item-id3",
+        "name": "Doughnut",
+        "desc": "Doughnuts may also include water, leavening, eggs, milk, sugar, oil, shortening, and natural or artificial flavors.",
+        "price": 2.99,
+        "imageSrc": "https://storage.googleapis.com/1260b1c390e14f6bae3d391c74665860/93984813-0cbd-4641-892a-88d9f3716b1b/food-doughnut.png"
+    },
+    {
+        "_id": "food-item-id4",
+        "name": "Burger & Fries",
+        "desc": "Combining lean beef with turkey, using low-fat cheese,and baking the fries",
+        "price": 9.99,
+        "imageSrc": "https://storage.googleapis.com/1260b1c390e14f6bae3d391c74665860/143b8c28-f5e9-4fc8-8bd4-ae1b07d7519c/food-burger-fries.png"
+    },
+    {
+        "_id": "food-item-id5",
+        "name": "Buritto",
+        "desc": "A burrito is a dish in Mexican and Tex-Mex cuisine that consists of a flour tortilla with various other ingredients.",
+        "price": 3.99,
+        "imageSrc": "https://storage.googleapis.com/1260b1c390e14f6bae3d391c74665860/a455bfc6-9ac1-47e0-b938-255521cb6e7e/food-buritto.png"
+    },
+    {
+        "_id": "food-item-id6",
+        "name": "Fish & Rice",
+        "desc": "Crazy good food from super nice owners lily and peter.",
+        "price": 9.99,
+        "imageSrc": "https://storage.googleapis.com/1260b1c390e14f6bae3d391c74665860/f953dd93-3dc5-4ef0-b904-6eac28b35bb6/food-fish-rice.png"
+    }
+]

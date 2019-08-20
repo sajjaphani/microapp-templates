@@ -27,6 +27,14 @@
             "author": "Progress Software"
         },
         {
+            "id": "template-km0011",
+            "path": "templates/apps/template-km0011",
+            "name": "Cafeteria Menu",
+            "description": "Cafeteria Menu - order food",
+            "icon": "0xf009",
+            "author": "Progress Software"
+        },
+        {
             "id": "template-km0013",
             "path": "templates/apps/template-km0013",
             "name": "My Pay",

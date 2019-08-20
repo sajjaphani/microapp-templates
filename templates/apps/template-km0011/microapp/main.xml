@@ -1,0 +1,121 @@
+<GridLayout height="100%" width="100%" rows="*, auto" loaded="{{ loaded }}" unloaded="{{ unloaded }}" xmlns:lv="nativescript-ui-listview"
+    backgroundColor="#e6e6e6">
+    <GridLayout rows="auto, *" visibility="{{ listItemsVisibility }}">
+        <GridLayout row="0" padding="10">
+            <GridLayout rows="auto, auto" backgroundColor="white" borderRadius="6">
+                <GridLayout row="0" class="p-t-20 p-l-20">
+                    <Label text="Select cafeteria:" class="cafeteria-selection-label m-l-10"></Label>
+                </GridLayout>
+                <GridLayout row="1" columns="*, auto" class="m-l-10 m-r-20" tap="{{ onShowCafListTapped }}">
+                    <Label col="0" text="{{ selectedCafeteria }}"
+                        class="p-15 m-l-5 cafeteria-selection-item-selected eloha-font-bold"></Label>
+                    <Label col="1" text="&#xf13a;" class="fa cafeteria-selection-icon"
+                        verticalAlignment="center"></Label>
+                </GridLayout>
+            </GridLayout>
+        </GridLayout>
+        <GridLayout row="1" class="p-l-5 p-r-5">
+            <lv:RadListView id="catalog-items-list" items="{{ items }}" selectionBehavior="Press"
+                itemSelected="{{ onItemSelected }}" itemLoading="{{ onItemLoading }}" class="list-group"
+                backgroundColor="#e6e6e6">
+                <lv:RadListView.listViewLayout>
+                    <lv:ListViewGridLayout scrollDirection="Vertical" ios:itemHeight="185" spanCount="2" />
+                </lv:RadListView.listViewLayout>
+                <lv:RadListView.itemTemplate>
+                    <GridLayout rows="*" height="185">
+                        <GridLayout android:class="grid-item-border" rows="*">
+                            <GridLayout rows="*">
+                                <Image row="0" src="{{ imageSrc }}" stretch="aspectFit" class="grid-item-border-top" />
+                                <GridLayout row="0" class="grid-item-border-bottom" height="100%">
+                                    <GridLayout rows="*, auto" padding="10">
+                                        <GridLayout row="0" rows="auto, auto" verticalAlignment="top" class="m-l-10">
+                                            <GridLayout row="0">
+                                                <Label text="{{ name }}" class="eloha-font-bold fitem-name m-t-10"
+                                                    textWrap="true"></Label>
+                                            </GridLayout>
+                                            <GridLayout row="1" columns="auto, auto" class="m-t-10">
+                                                <GridLayout col="0" class="fitem-price-container">
+                                                    <Label text="{{ '$' + price }}"
+                                                        class="eloha-font-regular fitem-price"></Label>
+                                                </GridLayout>
+                                                <GridLayout col="1" class="m-l-5 fitem-qty-container" visibility="{{ quantityVisibility }}">
+                                                    <Label horizontalAlignment="center" text="{{ '+' + quantity }}"
+                                                        class="eloha-font-bold fitem-qty" ></Label>
+                                                </GridLayout>
+                                            </GridLayout>
+                                        </GridLayout>
+                                        <GridLayout row="1" rows="*" columns="*, *" class="m-b-10"
+                                            horizontalAlignment="center" verticalAlignment="center">
+                                            <StackLayout col="0">
+                                                <GridLayout class="m-r-5 order-add-remove-outer"
+                                                    tap="{{ onRemoveItemTapped }}">
+                                                    <GridLayout class="order-remove-inner">
+                                                        <Label horizontalAlignment="center" verticalAlignment="center"
+                                                            text="&#xf068;" class="fa order-add-remove"></Label>
+                                                    </GridLayout>
+                                                </GridLayout>
+                                            </StackLayout>
+                                            <StackLayout col="1">
+                                                <GridLayout class="m-l-5 order-add-remove-outer"
+                                                    tap="{{ onAddItemTapped }}">
+                                                    <GridLayout class="order-add-inner">
+                                                        <Label horizontalAlignment="center" verticalAlignment="center"
+                                                            text="&#xf067;" class="fa order-add-remove"></Label>
+                                                    </GridLayout>
+                                                </GridLayout>
+                                            </StackLayout>
+                                        </GridLayout>
+                                    </GridLayout>
+                                </GridLayout>
+                            </GridLayout>
+                        </GridLayout>
+                    </GridLayout>
+                </lv:RadListView.itemTemplate>
+            </lv:RadListView>
+        </GridLayout>
+    </GridLayout>
+    <GridLayout rows="*" visibility="{{ cafeteriaSelectionVisibility }}" class="cafeteria-selection">
+        <GridLayout row="0" rows="auto" padding="10" horizontalAlignment="center" verticalAlignment="bottom"
+            style="z-index: 10" isPassThroughParentEnabled="false">
+            <GridLayout rows="auto, auto" backgroundColor="white" borderRadius="6">
+                <GridLayout row="0" class="p-t-20 p-l-20" isPassThroughParentEnabled="false">
+                    <Label text="Select cafeteria:" class="cafeteria-selection-label"></Label>
+                </GridLayout>
+                <ListView row="1" items="{{ cafetariaList }}" separatorColor="transparent" height="250"
+                    itemTap="{{ onCafeteriaItemTapped }}">
+                    <ListView.itemTemplate>
+                        <StackLayout item="{{ $value }}">
+                            <Label text="{{ $value }}"
+                                class="p-15 m-l-5 cafeteria-selection-item eloha-font-bold"></Label>
+                            <StackLayout class="hr-line-mapp"></StackLayout>
+                        </StackLayout>
+                    </ListView.itemTemplate>
+                </ListView>
+            </GridLayout>
+        </GridLayout>
+    </GridLayout>
+    <GridLayout row="0" rows="*" visibility="{{ orderSummaryVisibility }}" class="cafeteria-selection"
+        tap="{{ dismissOrderDetailsTapped }}">
+        <GridLayout row="0" rows="auto" class="order-container" horizontalAlignment="center" verticalAlignment="center">
+            <GridLayout rows="auto, auto, auto" backgroundColor="white" class="order-inner-container">
+                <GridLayout row="0" class="order-title-container">
+                    <Label class="eloha-font-regular order-title" textWrap="true"
+                        text="Order Placed Successfully"></Label>
+                </GridLayout>
+                <GridLayout row="1" class=" order-subtitle-container">
+                    <Label text="Your Order Number is:" class="eloha-font-regular order-subtitle"></Label>
+                </GridLayout>
+                <GridLayout row="2" class="order-number-container">
+                    <Label class="eloha-font-regular order-number" text="#014"></Label>
+                </GridLayout>
+            </GridLayout>
+        </GridLayout>
+    </GridLayout>
+    <AbsoluteLayout row="0" verticalAlignment="bottom" horizontalAlignment="center" class="{{ order_container_class }}">
+        <GridLayout visibility="{{ hasOrderVisibility }}" tap="{{ onPlaceOrderTapped }}" columns="*, auto"
+            class="order-data-container" style="z-index: 2">
+            <Label verticalAlignment="center" class="m-l-20 eloha-font-semibold order-data-title" col="0" text="Place Order"></Label>
+            <Label verticalAlignment="center" class="m-r-20 eloha-font-semibold order-data-value" col="1" text="{{ '$' + orderValue }} "></Label>
+        </GridLayout>
+    </AbsoluteLayout>
+</GridLayout>

@@ -1,0 +1,17 @@
+<GridLayout rows="auto, auto" class="card" loaded="{{ loaded }}" xmlns:cards="cards" xmlns:components="components">
+    <!-- Card Header-->
+    <cards:CardHeader row="0" name="{{ name }}"></cards:CardHeader>
+    <!-- Visible where there is an event/data... -->
+    <GridLayout row="1" visibility="{{ notificationsVisibility }}" class="card-feed-content" id="card-items-root">
+        <!-- Event Content -->
+        <GridLayout rows="*" style="height: 150">
+            <Label text="Add your Card UI components here..." class="eloha-desc" verticalAlignment="center"
+                horizontalAlignment="center"></Label>
+        </GridLayout>
+    </GridLayout>
+    <!-- Else part -->
+    <!-- Visible where there is no event/data or an action is takle place... -->
+    <StackLayout row="1" visibility="{{ noNotificationsVisibility }}" class="card-feed-item-top">
+        <cards:NoCardEvent></cards:NoCardEvent>
+    </StackLayout>
+</GridLayout>

@@ -1,0 +1,30 @@
+{
+  "id": "template-km0011",
+  "name": "Cafeteria Menu",
+  "description": "Cafeteria Menu",
+  "requireCollection": true,
+  "collectionName": "collection-cafeteria-menu",
+  "icon": "0xf009",
+  "hasCardUi": false,
+  "hasMicroappUi": true,
+  "hasTestData": true,
+  "summary": "This microapp can be used to order food. This template also contains sample data, and can be customised based on the data that needs to shown as food items.",
+  "files": {
+      "card": [
+          "templates/apps/template-km0011/card/index.js",
+          "templates/apps/template-km0011/card/main-model.js",
+          "templates/apps/template-km0011/card/main.css",
+          "templates/apps/template-km0011/card/main.js",
+          "templates/apps/template-km0011/card/main.xml"
+      ],
+      "microapp": [
+          "templates/apps/template-km0011/microapp/index.js",
+          "templates/apps/template-km0011/microapp/main-model.js",
+          "templates/apps/template-km0011/microapp/main.css",
+          "templates/apps/template-km0011/microapp/main.js",
+          "templates/apps/template-km0011/microapp/main.xml",
+          "templates/apps/template-km0011/microapp/sample-data.json"
+      ]
+  },
+  "version": "1.0.0"
+}
