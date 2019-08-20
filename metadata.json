@@ -27,6 +27,14 @@
             "author": "Progress Software"
         },
         {
+            "id": "template-km0013",
+            "path": "templates/apps/template-km0013",
+            "name": "My Pay",
+            "description": "Manage Payslips.",
+            "icon": "0xf003",
+            "author": "Progress Software"
+        },
+        {
             "id": "template-km0014",
             "path": "templates/apps/template-km0014",
             "name": "New Machine Request",
