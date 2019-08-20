@@ -1,16 +1,15 @@
 {
-    "name": "Corporate Events",
-    "description": "Corporate events template.",
-    "requireCollection": true,
+    "name": "Blank",
+    "description": "Build card of your own.",
+    "requireCollection": false,
     "icon": "",
-    "hasTestData": true,
-    "summary": "Sending updates to the employees in a timely manner is an important aspect. This card template can be used to send the organization wide events to a broad range of employees. This template also contains sample data, and can be customzed based on the data that needs to shown as an event.",
+    "hasTestData": false,
+    "summary": "This custom card UI template can be used to design any kind notification events. For example, it can be used show a barchart/pie chart. Just add the necessary UI elements and bind accordingly.",
     "files": [
         "templates/custom/cards/template-kmtc02/files/index.js",
         "templates/custom/cards/template-kmtc02/files/main-model.js",
         "templates/custom/cards/template-kmtc02/files/main.css",
         "templates/custom/cards/template-kmtc02/files/main.js",
-        "templates/custom/cards/template-kmtc02/files/main.xml",
-        "templates/custom/cards/template-kmtc02/files/sample-data.json"
+        "templates/custom/cards/template-kmtc02/files/main.xml"
     ]
 }

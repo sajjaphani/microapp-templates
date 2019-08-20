@@ -78,52 +78,44 @@
     "custom-templates": {
         "cards": [
             {
-                "id": "template-kmtc01",
-                "path": "templates/custom/cards/template-kmtc01",
-                "name": "Accept / Cancel",
-                "description": "Accept / Cancel",
+                "id": "template-kmtc06",
+                "path": "templates/custom/cards/template-kmtc06",
+                "name": "None",
+                "description": "No Notifications",
                 "icon": "",
-                "author": ""
-            },
-            {
-                "id": "template-kmtc02",
-                "path": "templates/custom/cards/template-kmtc02",
-                "name": "Corporate Events",
-                "description": "Corporate Events",
-                "icon": "",
-                "author": ""
-            },
-            {
-                "id": "template-kmtc03",
-                "path": "templates/custom/cards/template-kmtc03",
-                "name": "Poll / Vote",
-                "description": "Poll / Vote",
-                "icon": "",
-                "author": ""
-            },
-            {
-                "id": "template-kmtc04",
-                "path": "templates/custom/cards/template-kmtc04",
-                "name": "My Pay",
-                "description": "My Pay",
-                "icon": "",
-                "author": ""
+                "author": "",
+                "previewImage": "assets/template-imgs/cards/no-notification.png",
+                "previewSelectedImage": "assets/template-imgs/cards/no-notification-selected.png"
             },
             {
                 "id": "template-kmtc05",
                 "path": "templates/custom/cards/template-kmtc05",
-                "name": "Custom Card",
-                "description": "Custom Card",
+                "name": "Blank",
+                "description": "Build card of your own.",
                 "icon": "",
-                "author": ""
+                "author": "",
+                "previewImage": "assets/template-imgs/cards/blank.png",
+                "previewSelectedImage": "assets/template-imgs/cards/blank-selected.png"
             },
             {
-                "id": "template-kmtc06",
-                "path": "templates/custom/cards/template-kmtc06",
-                "name": "Blank / None",
-                "description": "Blank / None",
+                "id": "template-kmtc03",
+                "path": "templates/custom/cards/template-kmtc03",
+                "name": "Accept / Cancel",
+                "description": "Accept / Cancel",
                 "icon": "",
-                "author": ""
+                "author": "",
+                "previewImage": "assets/template-imgs/cards/accept-cancel.png",
+                "previewSelectedImage": "assets/template-imgs/cards/accept-cancel-selected.png"
+            },
+            {
+                "id": "template-kmtc05",
+                "path": "templates/custom/cards/template-kmtc05",
+                "name": "Poll / Vote",
+                "description": "Poll / Vote",
+                "icon": "",
+                "author": "",
+                "previewImage": "assets/template-imgs/cards/poll-vote.png",
+                "previewSelectedImage": "assets/template-imgs/cards/poll-vote-selected.png"
             }
         ],
         "microapps": [

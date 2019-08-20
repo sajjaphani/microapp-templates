@@ -1,17 +1,24 @@
 const ObservableArray = require("~/common/modules/data/observable-array").ObservableArray;
 const fromObject = require("~/common/modules/data/observable").fromObject;
 
+const Label = require("~/common/modules/ui/label").Label;
+const StackLayout = require("~/common/modules/ui/layouts/stack-layout").StackLayout;
+const ScrollView = require("~/common/modules/ui/scroll-view").ScrollView;
+
+const { EventHeader, EventAccept, EventCancel } = require("~/cards");
+
 const { PullToRefresh } = require("~/common/subscriptions");
-const { fromNow, toDate } = require("~/common/transformations");
-const { fetchAll } = require("~/common/kinvey-service");
+const { fromNow } = require("~/common/transformations");
+
+const { fetchAll, update } = require("~/common/kinvey-service");
+const { showAlert } = require("~/common/utility-service");
 
 const appJson = require("../app.json");
 
-const itemIcon = String.fromCharCode(0xf10c);
-const itemSelectedIcon = String.fromCharCode(0xf111);
+const eventIcon = String.fromCharCode(0xf0f2);
 
-const itemClass = 'fa poll-choice';
-const itemSelectedClass = 'fa poll-selected';
+const _ACCEPT_STATE = 'Accept';
+const _CANCEL_STATE = 'Cancel';
 
 function _loaded(args) {
     if (!source.pullToRefresh) {
@@ -29,45 +36,15 @@ function _loaded(args) {
     source.initialized = true;
 }
 
-function _formatOptions(options) {
-    let obsArray = new ObservableArray();
-    if (options && options.length > 0) {
-        options.forEach((item) => {
-            item.icon = itemIcon;
-            item.class = itemClass;
-            item.onChoiceTapped = (args) => {
-                _onChoiceTapped(args);
-            };
-            obsArray.push(fromObject(item))
-        })
-    }
-
-    return obsArray;
-}
-
-function _formatResults(result) {
-    let obsArray = new ObservableArray();
-    if (result && result.length > 0) {
-        result.forEach((item) => {
-            obsArray.push(fromObject(item))
-        })
-    }
-
-    return obsArray;
-}
-
 function _toFormattedObject(item) {
     return fromObject({
         id: item._id,
         name: item.name,
-        when: toDate(item.when),
         submittedOn: fromNow(item.submittedOn),
         from: fromObject(item.from),
-        to: item.to,
-        title: item.title,
-        data: _formatOptions(item.data),
-        result: _formatResults(item.result),
-        selectedChoice: ''
+        eventInfo: item.eventInfo,
+        eventPriority: "normal", // "high", "medium", "low"
+        comments: item.comments
     });
 }
 
@@ -103,30 +80,94 @@ function _unloaded(args) {
     source.pullToRefresh = undefined;
 }
 
-function _onAcceptTapped(args) {
-    // TODO connect to backend and upate
-    let id = args.object.id;
-    let optionsView = source.currentView.getViewById('options-visible-' + id);
-    if (optionsView) {
-        let newVisibility = changeVisibility(optionsView.visibility);
-        optionsView.visibility = newVisibility;
+function _updateUiAndRemoveItem(item, status) {
+    if (status == _ACCEPT_STATE) {
+        let view = source.currentView.getViewById(item.id);
+        view.removeChildren();
+        let cancelEvent = new EventAccept();
+        cancelEvent.text = "Event Accepted";
+        view.addChild(cancelEvent);
+    } else {
+        let view = source.currentView.getViewById(item.id);
+        view.removeChildren();
+        let cancelEvent = new EventCancel();
+        cancelEvent.text = "Event Cancelled";
+        view.addChild(cancelEvent);
     }
 
     setTimeout(() => {
-        let doneView = source.currentView.getViewById('options-done-' + id);
-        if (doneView) {
-            let newVisibility = changeVisibility(doneView.visibility);
-            doneView.visibility = newVisibility;
-        }
-    }, 100);
+        let _index = source.items.indexOf(item);
+        source.items.splice(_index, 1);
+        _checkEventDataAvailability();
+    }, 1000);
+}
+
+function _updateRecord(item, updates, status) {
+    update(appJson.collectionName, item.id, updates)
+        .subscribe(
+            data => { data ? _updateUiAndRemoveItem(item, status) : showAlert("Problem in Performing Action", "There is some problem in performing the action.") },
+            error => { showAlert("Problem in Performing Action", error.message) },
+            () => { });
+}
+
+function _onAcceptTapped(args) {
+    let item = args.object.bindingContext;
+    if (appJson.useTestData) {
+        _updateUiAndRemoveItem(item, _ACCEPT_STATE);
+    } else {
+        let updates = { status: _ACCEPT_STATE };
+        _updateRecord(item, updates, _ACCEPT_STATE);
+    }
 }
 
 function _onCancelTapped(args) {
-    // TODO connect to backend and upate
-    let id = args.object.id;
-    var itemIndex = source.items.map(function (item) { return item.id; }).indexOf(id);
-    source.items.splice(itemIndex, 1);
-    _checkEventDataAvailability();
+    let item = args.object.bindingContext;
+    if (appJson.useTestData) {
+        _updateUiAndRemoveItem(item, _CANCEL_STATE);
+    } else {
+        let updates = { status: _CANCEL_STATE };
+        _updateRecord(item, updates, _CANCEL_STATE);
+    }
+}
+
+function _onMoreTapped(args) {
+    let item = args.object.bindingContext;
+    let modelContent = new StackLayout();
+
+    let header = new EventHeader();
+    header.fromName = item.from.name;
+    header.fromAvatar = item.from.avatar;
+    header.submittedOn = item.submittedOn;
+    header.eventName = item.name;
+    header.eventIcon = eventIcon;
+    header.eventInfo = item.to
+    modelContent.addChild(header);
+
+    let line = new StackLayout();
+    line.cssClasses.add('m-t-10');
+    line.cssClasses.add('line');
+    modelContent.addChild(line);
+
+    let additionalLabel = new Label()
+    additionalLabel.text = "Add your own additional contents that are relevant to the event here.";
+    additionalLabel.cssClasses.add('eloha-font-regular')
+        .add('blog-title').add('m-10');
+    additionalLabel.textWrap = true;
+    modelContent.addChild(additionalLabel);
+
+    let detailedView = new ScrollView();
+    detailedView.content = modelContent;
+
+    const view = args.object;
+    const context = { view: detailedView };
+    const closeCallback = () => {
+        // console.log('closed')
+    };
+
+    setTimeout(() => {
+        const modalViewModule = "modal/modal-view";
+        view.showModal(modalViewModule, context, closeCallback, true);
+    }, 100);
 }
 
 function _checkEventDataAvailability() {
@@ -138,34 +179,6 @@ function _checkEventDataAvailability() {
         source.notificationsVisibility = "visible";
         source.noNotificationsVisibility = "collapse";
     }
-}
-
-function changeVisibility(visibility) {
-    if (visibility == 'collapse')
-        return 'visible';
-
-    return 'collapse';
-}
-
-function _onChoiceTapped(args) {
-    let choiceId = args.object.id;
-    let parent = args.object.parent;
-    let parentId = parent.bindingContext.id;
-
-    let itemIndex = source.items.map(function (item) { return item.id; }).indexOf(parentId);
-    let item = source.items.getItem(itemIndex);
-    let lastSelected = item.selectedChoice;
-    if (lastSelected && lastSelected != choiceId) {
-        let dataItemIndex = item.data.map(function (item) { return item.id; }).indexOf(lastSelected);
-        let dataItem = item.data.getItem(dataItemIndex);
-        dataItem.icon = itemIcon;
-        dataItem.class = itemClass;
-    }
-    let dataItemIndex = item.data.map(function (item) { return item.id; }).indexOf(choiceId);
-    let dataItem = item.data.getItem(dataItemIndex);
-    dataItem.icon = itemSelectedIcon;
-    dataItem.class = itemSelectedClass;
-    item.selectedChoice = choiceId;
 }
 
 // The binding
@@ -184,7 +197,7 @@ let source = fromObject({
         _onCancelTapped(args);
     },
     onMoreTapped: (args) => {
-        // No binding
+        _onMoreTapped(args);
     },
     loaded: (args) => {
         _loaded(args);
