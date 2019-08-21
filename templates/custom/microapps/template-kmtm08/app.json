@@ -4,7 +4,7 @@
     "requireCollection": false,
     "icon": "",
     "hasMicroappUi": true,
-    "hasTestData": false,
+    "hasTestData": true,
     "summary": "This microapp UI template can be used to include a Cards in a single column grid as a microapp.",
     "files": [
         "templates/custom/microapps/template-kmtm08/files/index.js",

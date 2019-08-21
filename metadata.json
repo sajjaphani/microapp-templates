@@ -148,6 +148,26 @@
                 "previewSelectedImage": "assets/template-imgs/appui/form-selected.png"
             },
             {
+                "id": "template-kmtm05",
+                "path": "templates/custom/microapps/template-kmtm05",
+                "name": "List View - Two Lines",
+                "description": "List View - Two Lines",
+                "icon": "",
+                "author": "",
+                "previewImage": "assets/template-imgs/appui/listview-2.png",
+                "previewSelectedImage": "assets/template-imgs/appui/listview-2-selected.png"
+            },
+            {
+                "id": "template-kmtm07",
+                "path": "templates/custom/microapps/template-kmtm07",
+                "name": "List View - Image & Two Lines",
+                "description": "List View - Image & Two Lines",
+                "icon": "",
+                "author": "",
+                "previewImage": "assets/template-imgs/appui/listview-4.png",
+                "previewSelectedImage": "assets/template-imgs/appui/listview-4-selected.png"
+            },
+            {
                 "id": "template-kmtm08",
                 "path": "templates/custom/microapps/template-kmtm08",
                 "name": "Card View - Single Column",

@@ -1,0 +1,17 @@
+{
+    "name": "List View - Two Lines",
+    "description": "List View - Two Lines",
+    "requireCollection": false,
+    "icon": "",
+    "hasMicroappUi": true,
+    "hasTestData": true,
+    "summary": "This microapp UI template can be used to include a list view which contains data in two lines.",
+    "files": [
+        "templates/custom/microapps/template-kmtm05/files/index.js",
+        "templates/custom/microapps/template-kmtm05/files/main-model.js",
+        "templates/custom/microapps/template-kmtm05/files/main.css",
+        "templates/custom/microapps/template-kmtm05/files/main.js",
+        "templates/custom/microapps/template-kmtm05/files/main.xml",
+        "templates/custom/microapps/template-kmtm05/files/sample-data.json"
+    ]
+}
