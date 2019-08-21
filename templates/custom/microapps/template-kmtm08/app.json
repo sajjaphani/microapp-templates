@@ -1,0 +1,17 @@
+{
+    "name": "Card View - Single Column",
+    "description": "Card View - Single Column",
+    "requireCollection": false,
+    "icon": "",
+    "hasMicroappUi": true,
+    "hasTestData": false,
+    "summary": "This microapp UI template can be used to include a Cards in a single column grid as a microapp.",
+    "files": [
+        "templates/custom/microapps/template-kmtm08/files/index.js",
+        "templates/custom/microapps/template-kmtm08/files/main-model.js",
+        "templates/custom/microapps/template-kmtm08/files/main.css",
+        "templates/custom/microapps/template-kmtm08/files/main.js",
+        "templates/custom/microapps/template-kmtm08/files/main.xml",
+        "templates/custom/microapps/template-kmtm08/files/sample-data.json"
+    ]
+}

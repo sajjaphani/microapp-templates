@@ -148,6 +148,26 @@
                 "previewSelectedImage": "assets/template-imgs/appui/form-selected.png"
             },
             {
+                "id": "template-kmtm08",
+                "path": "templates/custom/microapps/template-kmtm08",
+                "name": "Card View - Single Column",
+                "description": "Card View - Single Column",
+                "icon": "",
+                "author": "",
+                "previewImage": "assets/template-imgs/appui/cardview-1.png",
+                "previewSelectedImage": "assets/template-imgs/appui/cardview-1-selected.png"
+            },
+            {
+                "id": "template-kmtm09",
+                "path": "templates/custom/microapps/template-kmtm09",
+                "name": "Card View - Two Column",
+                "description": "Card View - Two Column",
+                "icon": "",
+                "author": "",
+                "previewImage": "assets/template-imgs/appui/cardview-2.png",
+                "previewSelectedImage": "assets/template-imgs/appui/cardview-2-selected.png"
+            },
+            {
                 "id": "template-kmtm15",
                 "path": "templates/custom/microapps/template-kmtm15",
                 "name": "Barcode Scanner",

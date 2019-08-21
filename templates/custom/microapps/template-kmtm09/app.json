@@ -1,0 +1,17 @@
+{
+    "name": "Card View - Two Column",
+    "description": "Card View - Two Column",
+    "requireCollection": false,
+    "icon": "",
+    "hasMicroappUi": true,
+    "hasTestData": false,
+    "summary": "This microapp UI template can be used to include a Cards into two column as a microapp.",
+    "files": [
+        "templates/custom/microapps/template-kmtm09/files/index.js",
+        "templates/custom/microapps/template-kmtm09/files/main-model.js",
+        "templates/custom/microapps/template-kmtm09/files/main.css",
+        "templates/custom/microapps/template-kmtm09/files/main.js",
+        "templates/custom/microapps/template-kmtm09/files/main.xml",
+        "templates/custom/microapps/template-kmtm09/files/sample-data.json"
+    ]
+}
